@@ -60,7 +60,7 @@ const INSTRUCTIONS = [
   '- Several tabs open: list_tabs and use_tab pick the project.',
 ].join('\n');
 
-const server = new Server({ name: 'meloduo', version: '0.1.1' }, { capabilities: { tools: { listChanged: true } }, instructions: INSTRUCTIONS });
+const server = new Server({ name: 'meloduo', version: '0.1.2' }, { capabilities: { tools: { listChanged: true } }, instructions: INSTRUCTIONS });
 
 function connect() {
   const ws = new WebSocket(ENDPOINT);
