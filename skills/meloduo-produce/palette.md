@@ -149,7 +149,7 @@ The "defining timbre" tells the listener the genre. Pick it first. It is often t
 | Trance, EDM | supersaw, offbeat bass | sub and offbeat bass, arp or gated pad, lead, pluck, pad, risers | live keys, guitar |
 | Trap | 808 with glide, sparse bell or flute | 808, melody (bell, flute, pluck, choir), dark pad, hat rolls | mid bass, dense chords |
 | Boom bap, lo-fi | dusty keys, soft swung drums | keys, sub or live bass, vinyl, a 2–4 note melody, soft pad | supersaw, bright lead |
-| Synthwave | poly pad, saw bass in eighths | bass in eighths, Juno pad, lead with vibrato, sixteenth arp, brass stab | sub only, trap hats |
+| Synthwave | poly pad, saw bass in eighths | bass in eighths, Chorus pad, lead with vibrato, sixteenth arp, brass stab | sub only, trap hats |
 | Pop | "voice-like" lead or vocal, piano or guitar | pop bass, keys or guitar, pad, pluck hook, lead | heavy texture, long arp |
 | Pop-punk, rock | distorted power chords, live drums | rhythm guitar ×2, lead guitar, picked bass, live kit | pad (or quiet), arp |
 | Metal, nu-metal | a wall of high-gain guitars in low tuning, double kick, a tight clicky kit | rhythm guitar ×2–4 (doubles), bass in unison with the riff, kit with double kick, optional lead or guitar squeal; samples and scratches are details | a pad up front, arp, soft synths as the carrier |
@@ -158,7 +158,7 @@ The "defining timbre" tells the listener the genre. Pick it first. It is often t
 
 ## 9. Role candidates
 
-Take 2–3 candidates and choose by mood words: dark → Ladder or Diode, lower cutoff, Dark pad; bright → open filter, Glass, FM; vintage → Juno, Ladder, tape; modern → wavetable, Fold, Growl. The full list: `get_synth` (presets), `get_drum`.
+Take 2–3 candidates and choose by mood words: dark → Ladder or Diode, lower cutoff, Dark pad; bright → open filter, Glass, FM; vintage → Chorus pad, Ladder, tape; modern → wavetable, Fold, Growl. The full list: `get_synth` (presets), `get_drum`.
 
 | Genre | Role | Candidates | Edit for character |
 |---|---|---|---|
@@ -181,8 +181,8 @@ Take 2–3 candidates and choose by mood words: dark → Ladder or Diode, lower 
 | | melody | Lead/Lo-fi Lo-fi sine lead; Pluck Lo-fi pluck, Kalimba, Harp pluck; guitar Nylon classical, Nylon bossa | — |
 | | texture | Texture Vinyl air, Bit crush texture | — |
 | | drums | Acoustic Jazz kit (brushes) or a soft 808 | Jazz snare |
-| Synthwave | bass | Bass/Synthwave Synthwave bass, Juno bass; Bass Moog bass | eighths with octave jumps |
-| | pad | Pad Juno pad, PWM pad, Warm analog pad; Strings Analog strings | slow LFO on pitch and filter |
+| Synthwave | bass | Bass/Synthwave Synthwave bass, Pulse bass; Bass Ladder bass | eighths with octave jumps |
+| | pad | Pad Chorus pad, PWM pad, Warm analog pad; Strings Analog strings | slow LFO on pitch and filter |
 | | lead | Lead/Synthwave Synthwave lead; Lead/Synthpop Synthpop square, Brass lead; Lead Vibrato lead; Lead/Rock Prog mini lead | `oscPhase` Free, vibrato |
 | | arp, brass | Arp Sequence arp, Dotted arp; Brass/Synthwave Synthwave brass, Jump brass | — |
 | | drums | 909 or 808 kit; acoustic snare and a long hall | — |

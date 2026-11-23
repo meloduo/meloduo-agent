@@ -65,7 +65,7 @@ The `mods` matrix in `set_synth`: amount −1…1 is a share of the target's ran
 | Lo-fi, 8-bit | `warp` Quantize, `warpAmt` 0.6–0.9 |
 | Lo-fi wow | a fast, light LFO → pitch and a second slower, deeper one |
 | Acid 303 | Diode acid: resonance 10–16, `envAmt` 3–4, Legato with slides |
-| Fat analog bass | Moog bass (Ladder); resonance no higher than 8 |
+| Fat analog bass | Ladder bass (Ladder); resonance no higher than 8 |
 | Talking bass | Talking bass (Formant); lfo2 → fVowel 0.6–0.8 at 1/8–1/4 |
 | Plucked string, metal | Comb pluck (Comb, `keytrack` 1, `cutoff` 261.63); resonance sets the ring length |
 | Phaser pad | Notch pad (SVF Notch, a free slow LFO on the filter); `f2Model` HP 150 Hz |

@@ -33,7 +33,7 @@ Sound design is a separate skill, `meloduo-sound-design`. Call it at stages 3, 5
 
 1. **Always** give `why`: one sentence in the user's language with the reason, not a retelling of the arguments.
 2. **Always** respect the user's edits. Read a result with `changedSinceYourLastCall` and take it into account. Compare a rejected edit with the changes and retry it. Do not undo what the user changed by hand.
-3. **Always** read before you edit: `get_project_state` at the start and whenever something is unclear. Several tabs: `list_tabs`, then `use_tab` with `projectId`. Take ids from results.
+3. **Always** read before you edit: `get_project_state` at the start and whenever something is unclear. Its `info` holds the brief and notes of earlier sessions: continue from them instead of asking again. Several tabs: `list_tabs`, then `use_tab` with `projectId`. Take ids from results.
 4. The grid is 1/16; steps and bars count from 0. Read the note line syntax once with `get_notation`.
 5. **Always** one part, one pattern. A "whole section" pattern cannot be thinned out with clips; if that happened, use `split_pattern` with `groups`.
 6. Render windows (`fromBar`/`toBar`) and the full song rarely; pass `stems: false` when you do not need stems. One mix edit, one render: look at `change`.
@@ -61,7 +61,7 @@ Without an explicit choice a model takes the most typical answer every time, and
 1. For the main axes (tempo, mode and tonic, progression, form, hook carrier, timbre, sound character, space), list a few options that fit the genre and the reference. Rate how typical each one is. Menus: palette.md.
 2. On some axes, deliberately move away from the most typical option. Genre and reference come first: punk does not get slow for the sake of variety. Leave the axes of the reference core (stage 1) alone and make untypical picks only on secondary axes. The more precise the request ("in the style of an artist", "like track X"), the fewer untypical picks; an open request ("something in this genre") allows more. If you have a shell, `date +%s` modulo the number of options gives an honest pick from the tail.
 3. Write the card briefly: tempo, mode, progression per section, form and length (seconds = bars × 240 / BPM), parts (role → sound → how it differs from the preset), signature sound, sound character, space, a couple of FX moments, one memorable detail (a mode change, a hook where nobody expects it, silence before the drop).
-4. Show the card to the user in 6–10 lines. Call `set_tempo` and `set_scale`, and name the tracks (`rename`, `add_track`).
+4. Show the card to the user in 6–10 lines. Call `set_tempo` and `set_scale`, and name the tracks (`rename`, `add_track`). Store the card with `set_project_info`: genre, references, and the card as `brief`.
 
 Check yourself: does the card show how this track differs from the "default track" (palette.md, section 1)? Is it close to the reference? Is every core item in the card, as a main part rather than a detail? Would a fan of the artist recognise the track from the card?
 
@@ -175,3 +175,5 @@ Briefly, in the user's language:
 4. What to listen to first: the places where you decided by numbers.
 5. The user does the export: File > Export (Ctrl+Shift+E), WAV 24-bit, with tail, Level "As mixed". Stems: Files: Stems (ZIP); notes: MIDI.
 6. What you could not do because of the limits.
+
+Before the report, write `notes` with `set_project_info`: the stage reached, the decisions the user made, and what is left, so the next session starts from there.

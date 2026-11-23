@@ -13,8 +13,9 @@ const RENDER_TIMEOUT_MS = 600_000;
 const timeoutOf = (tool: string) => (tool === 'render_preview' || tool === 'match_loudness' || tool === 'match_eq' ? RENDER_TIMEOUT_MS : CALL_TIMEOUT_MS);
 const IDLE_MS = Number(process.env.MELODUO_IDLE_MS ?? 15 * 60_000);
 
-// Proxies (Node) send no Origin and a page always does, so /agent must come without one. Tabs: the published app, the dev servers, and MELODUO_ORIGINS (comma-separated).
-const APP_ORIGINS = ['https://meloduo.github.io', 'http://localhost:5173', 'http://127.0.0.1:5173'];
+// Proxies (Node) send no Origin and a page always does, so /agent must come without one. Tabs: the published app and MELODUO_ORIGINS (comma-separated, for a dev server).
+// No dev port by default: any other Vite project on 5173 would become a tab that answers the agent.
+const APP_ORIGINS = ['https://meloduo.github.io'];
 const TAB_ORIGINS = new Set([...APP_ORIGINS, ...(process.env.MELODUO_ORIGINS ?? '').split(',').filter(Boolean)]);
 const wss = new WebSocketServer({
   host: '127.0.0.1',
@@ -34,13 +35,14 @@ type Agent = { client: Client | null; pick?: string; sid: string };
 const agents = new Map<WebSocket, Agent>();
 
 type ToolDef = { name: string; description?: string; inputSchema: object };
-type Tab = { ws: WebSocket; name: string; trusted: boolean; project?: { id: string | null; name: string }; readOnly?: boolean; tools?: ToolDef[] };
+type Tab = { ws: WebSocket; name: string; trusted: boolean; activeAt?: number; reported?: number; project?: { id: string | null; name: string }; readOnly?: boolean; tools?: ToolDef[] };
 const tabs: Tab[] = [];
 let nextTab = 1;
 const openTabs = () => tabs.filter((t) => t.ws.readyState === t.ws.OPEN);
-// The latest tab wins; when it closes the previous one takes over. Of two tabs with the project, the one that may edit it.
+// The tab the user touched last wins (activeAt; a tab without it counts by connection order); when it closes the previous one takes over. Of two tabs with the project, the one that may edit it.
+const latest = () => openTabs().reduce<Tab | undefined>((best, t) => (!best || (t.activeAt ?? 0) >= (best.activeAt ?? 0) ? t : best), undefined);
 const tabFor = (pick?: string) => {
-  if (!pick) return openTabs().at(-1);
+  if (!pick) return latest();
   const has = openTabs().filter((t) => t.project?.id === pick);
   return has.filter((t) => !t.readOnly).at(-1) ?? has.at(-1);
 };
@@ -115,18 +117,31 @@ function callTab(tool: string, args: unknown, session: number, signal: AbortSign
 // The tab owns the tools and sends their JSON Schema. The cache lets a session that starts before the tab see the full list.
 const CACHE = join(tmpdir(), `meloduo-tools-${PORT}.json`);
 let cached: ToolDef[] = [];
-try {
-  cached = JSON.parse(readFileSync(CACHE, 'utf8'));
-} catch {}
-const tabTools = () => openTabs().filter((t) => t.tools).at(-1)?.tools ?? cached;
+const readCache = () => {
+  try {
+    const list: unknown = JSON.parse(readFileSync(CACHE, 'utf8'));
+    if (validTools(list)) cached = list;
+  } catch {}
+};
+const tabTools = () => openTabs().filter((t) => t.tools && t.trusted).at(-1)?.tools ?? cached;
 const toolDefs = () => [...tabTools(), ...BRIDGE_TOOLS];
 const tellAgents = () => {
   const msg = JSON.stringify({ type: 'tools', tools: toolDefs() });
   for (const ws of agents.keys()) if (ws.readyState === ws.OPEN) ws.send(msg);
 };
-const isTool = (t: unknown) => !!t && typeof (t as ToolDef).name === 'string' && /^[a-z0-9_]{1,64}$/.test((t as ToolDef).name) && typeof (t as ToolDef).inputSchema === 'object';
+// Descriptions reach the agent as text it reads: a cap keeps a tab from planting a long prompt (Claude Code cuts at 2048 anyway).
+const isTool = (t: unknown) =>
+  !!t &&
+  typeof (t as ToolDef).name === 'string' &&
+  /^[a-z0-9_]{1,64}$/.test((t as ToolDef).name) &&
+  ((t as ToolDef).description === undefined || (typeof (t as ToolDef).description === 'string' && (t as ToolDef).description!.length <= 2048)) &&
+  typeof (t as ToolDef).inputSchema === 'object' &&
+  (t as ToolDef).inputSchema !== null &&
+  JSON.stringify((t as ToolDef).inputSchema).length <= 50_000;
+const validTools = (list: unknown): list is ToolDef[] => Array.isArray(list) && list.length <= 200 && list.every(isTool);
+readCache();
 const takeTools = (tab: Tab, list: unknown) => {
-  if (!Array.isArray(list) || !list.every(isTool)) return log('tab sent an invalid tool list, ignored');
+  if (!validTools(list)) return log('tab sent an invalid tool list, ignored');
   const before = JSON.stringify(tabTools());
   tab.tools = list as ToolDef[];
   if (JSON.stringify(tabTools()) === before) return;
@@ -148,7 +163,7 @@ const armIdle = () => {
 wss.on('connection', (ws, req) => {
   if (req.url !== '/agent') {
     const origin = req.headers.origin;
-    const tab: Tab = { ws, name: `tab${nextTab++}`, trusted: !origin || APP_ORIGINS.includes(origin) };
+    const tab: Tab = { ws, name: `tab${nextTab++}`, trusted: !origin || TAB_ORIGINS.has(origin) };
     tabs.push(tab);
     tellTabs();
     log(`tab connected (${tabs.length} open)`);
@@ -156,7 +171,11 @@ wss.on('connection', (ws, req) => {
     ws.on('message', (raw) => {
       try {
         const msg = JSON.parse(raw.toString());
-        if (msg.type === 'tab') (tab.project = msg.project, tab.readOnly = !!msg.readOnly, tellTabs());
+        // The daemon stamps the time itself: a number from the tab could claim the future and take every call.
+        if (msg.type === 'tab') {
+          if (typeof msg.activeAt === 'number' && msg.activeAt !== tab.reported) (tab.reported = msg.activeAt), (tab.activeAt = Date.now());
+          (tab.project = msg.project), (tab.readOnly = !!msg.readOnly), tellTabs();
+        }
         if (msg.type === 'tools') takeTools(tab, msg.tools);
       } catch {}
     });

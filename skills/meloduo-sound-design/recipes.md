@@ -18,7 +18,7 @@ Role: the bass and the continuation of the kick at once. The main mistake is "ju
 
 The instrument is the Meloduo 808: `add_channel` with `voice` "808" and `preset`, then `set_808`; `get_808` gives parameters, presets and notes. The voice is mono: from a chord only the lowest note sounds.
 
-Presets: TR-808 (clean, short), Trap (start here), Long trap, Drill slide, Distorted, Rage, Boom bap, Phonk, Sub, Punchy.
+Presets: Classic (clean, short), Trap (start here), Long trap, Drill slide, Distorted, Rage, Boom bap, Phonk, Sub, Punchy.
 
 Main knobs:
 - `punch` and `punchTime`: a pitch drop from above at the start of the note; more than 3 semitones clicks on short notes;
@@ -31,7 +31,7 @@ Main knobs:
 - `presence`: mids for the phone: a built-in upper layer, a square an octave above the note at 250 Hz–2 kHz; on F1, `presence` 0.5 gives about 13 % of the energy above 250 Hz, 1 about 40 %; use 0.5–0.8;
 - `click`: the attack click; `lowCut`: cuts the rumble below 25–40 Hz.
 
-`render_preview` warns `thin808` when less than 7 % is above 250 Hz: raise `presence`. Trap, Long trap and Drill slide pass as they are; Sub and TR-808 do not, by design.
+`render_preview` warns `thin808` when less than 7 % is above 250 Hz: raise `presence`. Trap, Long trap and Drill slide pass as they are; Sub and Classic do not, by design.
 
 The 808 rhythm follows the genre. In an atmospheric, slow beat each hit stands apart: rests between notes, a slide as an accent rather than on every note. Notes butted together or overlapping merge into one long drone. In dense trap the 808 plays more often, but still with its own pattern rather than as a pedal.
 
