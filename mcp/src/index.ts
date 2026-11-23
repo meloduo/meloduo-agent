@@ -9,6 +9,9 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WebSocket } from 'ws';
 
+// `meloduo-mcp stop` stops the shared bridge; stop exits the process, so the server below never starts.
+if (process.argv[2] === 'stop') { await import(new URL(import.meta.url.endsWith('.ts') ? './stop.ts' : './stop.js', import.meta.url).href); await new Promise(() => {}); }
+
 // stdout carries the MCP protocol: log only to stderr.
 const log = (...a: unknown[]) => console.error('[proxy]', ...a);
 const PORT = Number(process.env.MELODUO_PORT ?? 8787);
@@ -16,8 +19,12 @@ const ENDPOINT = `ws://127.0.0.1:${PORT}/agent`;
 
 function spawnDaemon() {
   const logFile = openSync(join(tmpdir(), 'meloduo-bridge.log'), 'a');
-  const child = spawn(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./daemon.ts', import.meta.url))], {
-    cwd: fileURLToPath(new URL('..', import.meta.url)),
+  // From source (.ts) the daemon runs through tsx; the npm package ships plain .js.
+  const dev = import.meta.url.endsWith('.ts');
+  const daemon = fileURLToPath(new URL(dev ? './daemon.ts' : './daemon.js', import.meta.url));
+  const child = spawn(process.execPath, dev ? ['--import', 'tsx', daemon] : [daemon], {
+    // tsx resolves from the package folder; the package runs from temp so it never locks the npx cache folder on Windows.
+    cwd: dev ? fileURLToPath(new URL('..', import.meta.url)) : tmpdir(),
     detached: true,
     windowsHide: true,
     stdio: ['ignore', logFile, logFile],

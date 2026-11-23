@@ -6,3 +6,4 @@
 - After a change run `pnpm typecheck` and `pnpm smoke` in `mcp/`.
 - Skills are plain `SKILL.md` folders with no client-specific tools. When a tool, a parameter or a `render_preview` field changes in the app, update the skills too.
 - Comments are rare: only a reason the code cannot show, one line, in English.
+- Publish the bridge from `mcp/` with `npm publish --access public`; `prepublishOnly` runs the type check and the build. Check a built package with `MELODUO_SMOKE_ENTRY=<path>/dist/index.js pnpm smoke`.

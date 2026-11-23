@@ -12,7 +12,7 @@ rmSync(join(tmpdir(), `meloduo-tools-${PORT}.json`), { force: true });
 const env = { ...(process.env as Record<string, string>), MELODUO_PORT: PORT, MELODUO_NO_WATCH: '1' };
 const connectClient = async (name: string) => {
   const c = new Client({ name, version: '0.0.0' });
-  await c.connect(new StdioClientTransport({ command: process.execPath, args: ['--import', 'tsx', 'src/index.ts'], env }));
+  await c.connect(new StdioClientTransport({ command: process.execPath, args: process.env.MELODUO_SMOKE_ENTRY ? [process.env.MELODUO_SMOKE_ENTRY] : ['--import', 'tsx', 'src/index.ts'], env }));
   return c;
 };
 const client = await connectClient('smoke');

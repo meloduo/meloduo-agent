@@ -13,11 +13,13 @@ const RENDER_TIMEOUT_MS = 600_000;
 const timeoutOf = (tool: string) => (tool === 'render_preview' || tool === 'match_loudness' || tool === 'match_eq' ? RENDER_TIMEOUT_MS : CALL_TIMEOUT_MS);
 const IDLE_MS = Number(process.env.MELODUO_IDLE_MS ?? 15 * 60_000);
 
-// Localhost only: another web page must not drive the project. Proxies (Node) send no Origin, the tab does.
+// Proxies (Node) send no Origin and a page always does, so /agent must come without one. Tabs: the published app, the dev servers, and MELODUO_ORIGINS (comma-separated).
+const APP_ORIGINS = ['https://meloduo.github.io', 'http://localhost:5173', 'http://127.0.0.1:5173'];
+const TAB_ORIGINS = new Set([...APP_ORIGINS, ...(process.env.MELODUO_ORIGINS ?? '').split(',').filter(Boolean)]);
 const wss = new WebSocketServer({
   host: '127.0.0.1',
   port: PORT,
-  verifyClient: ({ origin }: { origin?: string }) => !origin || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin),
+  verifyClient: ({ origin, req }: { origin?: string; req: { url?: string } }) => (req.url === '/agent' ? !origin : !origin || TAB_ORIGINS.has(origin)),
 });
 
 // Without a handler a busy port prints a stack. A second bridge (two sessions started at once) exits quietly.
@@ -32,7 +34,7 @@ type Agent = { client: Client | null; pick?: string; sid: string };
 const agents = new Map<WebSocket, Agent>();
 
 type ToolDef = { name: string; description?: string; inputSchema: object };
-type Tab = { ws: WebSocket; name: string; project?: { id: string | null; name: string }; readOnly?: boolean; tools?: ToolDef[] };
+type Tab = { ws: WebSocket; name: string; trusted: boolean; project?: { id: string | null; name: string }; readOnly?: boolean; tools?: ToolDef[] };
 const tabs: Tab[] = [];
 let nextTab = 1;
 const openTabs = () => tabs.filter((t) => t.ws.readyState === t.ws.OPEN);
@@ -122,15 +124,18 @@ const tellAgents = () => {
   const msg = JSON.stringify({ type: 'tools', tools: toolDefs() });
   for (const ws of agents.keys()) if (ws.readyState === ws.OPEN) ws.send(msg);
 };
+const isTool = (t: unknown) => !!t && typeof (t as ToolDef).name === 'string' && /^[a-z0-9_]{1,64}$/.test((t as ToolDef).name) && typeof (t as ToolDef).inputSchema === 'object';
 const takeTools = (tab: Tab, list: unknown) => {
-  if (!Array.isArray(list)) return;
+  if (!Array.isArray(list) || !list.every(isTool)) return log('tab sent an invalid tool list, ignored');
   const before = JSON.stringify(tabTools());
   tab.tools = list as ToolDef[];
   if (JSON.stringify(tabTools()) === before) return;
   cached = tabTools();
-  try {
-    writeFileSync(CACHE, JSON.stringify(cached));
-  } catch {}
+  // Only a built-in app origin or a tab with no Origin may write the cache that outlives the bridge.
+  if (tab.trusted)
+    try {
+      writeFileSync(CACHE, JSON.stringify(cached));
+    } catch {}
   tellAgents();
 };
 
@@ -142,7 +147,8 @@ const armIdle = () => {
 
 wss.on('connection', (ws, req) => {
   if (req.url !== '/agent') {
-    const tab: Tab = { ws, name: `tab${nextTab++}` };
+    const origin = req.headers.origin;
+    const tab: Tab = { ws, name: `tab${nextTab++}`, trusted: !origin || APP_ORIGINS.includes(origin) };
     tabs.push(tab);
     tellTabs();
     log(`tab connected (${tabs.length} open)`);
@@ -215,7 +221,7 @@ wss.on('connection', (ws, req) => {
   });
 });
 
-if (!process.env.MELODUO_NO_WATCH) {
+if (!process.env.MELODUO_NO_WATCH && import.meta.url.endsWith('.ts')) {
   let timer: ReturnType<typeof setTimeout> | undefined;
   watch(fileURLToPath(new URL('.', import.meta.url)), { recursive: true }, (_e, file) => {
     if (!file || !/\.ts$/.test(file) || /\.test\.ts$|smoke\.ts$/.test(file)) return;
