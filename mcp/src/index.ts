@@ -60,7 +60,7 @@ const INSTRUCTIONS = [
   '- Several tabs open: list_tabs and use_tab pick the project.',
 ].join('\n');
 
-const server = new Server({ name: 'meloduo', version: '0.0.1' }, { capabilities: { tools: { listChanged: true } }, instructions: INSTRUCTIONS });
+const server = new Server({ name: 'meloduo', version: '0.1.1' }, { capabilities: { tools: { listChanged: true } }, instructions: INSTRUCTIONS });
 
 function connect() {
   const ws = new WebSocket(ENDPOINT);
@@ -132,6 +132,8 @@ server.oninitialized = () => {
   if (daemon?.readyState === WebSocket.OPEN) daemon.send(JSON.stringify({ type: 'hello', client, pick, sid }));
 };
 server.onclose = () => setTimeout(() => process.exit(0), 100);
+// The SDK transport ignores stdin EOF; without this a proxy orphaned by its client (npx on Windows) keeps restarting the daemon.
+process.stdin.on('end', () => setTimeout(() => process.exit(0), 100));
 
 connect();
 await server.connect(new StdioServerTransport());

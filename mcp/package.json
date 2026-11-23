@@ -1,6 +1,6 @@
 {
   "name": "@meloduo/mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP bridge for Meloduo, a browser DAW: lets any MCP client edit the project open in your browser tab.",
   "keywords": [
     "mcp",
