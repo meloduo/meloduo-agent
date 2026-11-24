@@ -19,7 +19,7 @@ const client = await connectClient('smoke');
 let listChanged = 0;
 client.setNotificationHandler(ToolListChangedNotificationSchema, async () => void listChanged++);
 const names = async (c: Client) => (await c.listTools()).tools.map((t) => t.name).sort();
-assert.deepEqual(await names(client), ['list_tabs', 'use_tab'], 'no tab and no cache: only the bridge tools');
+assert.deepEqual(await names(client), ['get_guide', 'list_tabs', 'use_tab'], 'no tab and no cache: only the bridge tools');
 
 // A fake tab: the bridge knows nothing about the tools, the tab sends them and checks the arguments.
 const TOOLS = [
@@ -63,12 +63,20 @@ const json = async (c: Client, name: string, args = {}) => {
   assert.ok(!r.isError, text(r));
   return JSON.parse(text(r));
 };
+const index = await json(client, 'get_guide');
+assert.ok(index.guides.length > 50 && index.guides.some((g: { id: string }) => g.id === 'role-808'), 'get_guide lists the guides');
+const two = await json(client, 'get_guide', { topics: ['role-808', 'gated reverb', 'nosuchguide'] });
+assert.deepEqual(two.guides.map((g: { id: string }) => g.id), ['role-808', 'tool-reverb'], 'ids and aliases resolve');
+assert.equal(two.missing[0].id, 'nosuchguide');
+const check = await json(client, 'get_guide', { topics: ['tool-reverb'], section: 'Recipes' });
+assert.match(check.guides[0].text, /^## Recipes/);
+assert.equal((await client.callTool({ name: 'get_guide', arguments: { topics: ['a', 'b', 'c', 'd', 'e'] } })).isError, true);
 
 const a: Fake = { bpm: 120 };
 let ws = await openTab(a, { id: 'pa', name: 'Song A' });
 await until(() => listChanged > 0);
 assert.ok(listChanged > 0, 'the tab brings its tools: list_changed');
-assert.deepEqual(await names(client), ['get_project_state', 'list_tabs', 'set_tempo', 'use_tab']);
+assert.deepEqual(await names(client), ['get_guide', 'get_project_state', 'list_tabs', 'set_tempo', 'use_tab']);
 assert.match(client.getInstructions() ?? '', /^Meloduo is a browser DAW/);
 
 await until(() => seenClient !== undefined && seenClient !== null);
@@ -113,7 +121,7 @@ await new Promise((r) => quit.on('open', r));
 quit.send(JSON.stringify({ type: 'quit' }));
 await new Promise((r) => setTimeout(r, 300));
 const third = await connectClient('smoke3');
-assert.deepEqual(await names(third), ['get_project_state', 'list_tabs', 'set_tempo', 'use_tab'], 'a new bridge with no tab yet serves the cached list');
+assert.deepEqual(await names(third), ['get_guide', 'get_project_state', 'list_tabs', 'set_tempo', 'use_tab'], 'a new bridge with no tab yet serves the cached list');
 await third.close();
 ws = await openTab(a, { id: 'pa', name: 'Song A' });
 const tabB2 = await openTab(b, { id: 'pb', name: 'Song B' }, (c) => void (seenB = c));

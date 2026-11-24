@@ -3,6 +3,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WebSocketServer, type WebSocket } from 'ws';
+import { GUIDE_TOOL, getGuide } from './guides.js';
 
 // Never write to stdout: the proxies read this process's output; log to stderr.
 const log = (...a: unknown[]) => console.error('[bridge]', ...a);
@@ -72,6 +73,7 @@ const BRIDGE_TOOLS = [
       'Pick the project for this session: all later calls go to the tab with this project, also after it reloads. Take projectId from list_tabs. Without projectId the session follows the last opened tab again. Call get_project_state after the pick.',
     inputSchema: { type: 'object', properties: { projectId: { type: 'string', description: 'Project id from list_tabs; empty means the last opened tab.' } } },
   },
+  GUIDE_TOOL,
 ];
 
 type Reply = { id: number; result?: unknown; error?: string };
@@ -218,6 +220,10 @@ wss.on('connection', (ws, req) => {
     const { id, tool, args } = msg;
     const reply = (r: object) => ws.readyState === ws.OPEN && ws.send(JSON.stringify({ id, ...r }));
     if (tool === 'list_tabs') return reply({ result: tabView(me.pick) });
+    if (tool === 'get_guide') {
+      log(`get_guide ${JSON.stringify((args as { topics?: unknown } | undefined)?.topics ?? 'index')}`);
+      return reply(getGuide(args));
+    }
     if (tool === 'use_tab') {
       const pick = (args as { projectId?: unknown } | undefined)?.projectId;
       if (pick !== undefined && typeof pick !== 'string') return reply({ error: 'projectId must be a string from list_tabs. Call list_tabs and retry.' });
@@ -243,7 +249,7 @@ wss.on('connection', (ws, req) => {
 if (!process.env.MELODUO_NO_WATCH && import.meta.url.endsWith('.ts')) {
   let timer: ReturnType<typeof setTimeout> | undefined;
   watch(fileURLToPath(new URL('.', import.meta.url)), { recursive: true }, (_e, file) => {
-    if (!file || !/\.ts$/.test(file) || /\.test\.ts$|smoke\.ts$/.test(file)) return;
+    if (!file || !/\.ts$/.test(file) || /\.test\.ts$|smoke\.ts$|check-guides\.ts$/.test(file)) return;
     clearTimeout(timer);
     timer = setTimeout(() => (log(`${file} changed, restarting`), process.exit(0)), 400);
   });

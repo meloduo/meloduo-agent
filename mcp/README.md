@@ -25,7 +25,7 @@ Then:
 2. Click once in the tab so the browser allows sound.
 3. Ask your agent for a track.
 
-For the full producer workflow, add the [skills](https://github.com/meloduo/meloduo-agent/tree/main/skills) to your client.
+The bridge also serves the producer [guides](https://github.com/meloduo/meloduo-agent/tree/main/guides) through its own tool `get_guide` (read-only, works without a tab). For the full producer workflow, add the [skills](https://github.com/meloduo/meloduo-agent/tree/main/skills) to your client.
 
 ## Commands and settings
 

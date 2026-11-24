@@ -3,7 +3,8 @@
 Connect any AI agent to Meloduo, a browser DAW. The agent edits the project open in your tab; you see every edit, and one button undoes the agent's whole turn.
 
 - `mcp/`: the MCP bridge. Works with any MCP client. Tested with Claude Code and Cline; setup for Cursor, VS Code and Codex is in `mcp/README.md`.
-- `skills/`: agent skills in the `SKILL.md` format: `meloduo-produce` (an idea to a mastered track) and `meloduo-sound-design` (design the sounds instead of trusting presets).
+- `skills/`: four agent skills in the `SKILL.md` format: `meloduo` (where to start, routes a request), `meloduo-produce` (an idea to a mastered track in ten stages), `meloduo-sound-design` (design the sounds instead of trusting presets) and `meloduo-mix` (mix and master).
+- `guides/`: more than 100 short producer guides the skills load one topic at a time: stages, sound roles, genres, studio tools and craft.
 
 ## Connect your client
 
@@ -22,7 +23,7 @@ Open Meloduo at https://meloduo.github.io/app/ (or your local dev server). The t
 
 ## Skills
 
-Copy `skills/meloduo-produce` and `skills/meloduo-sound-design` into your client's skills folder. A client without skills can load `SKILL.md` as instructions.
+Clone or download the repository and copy the four folders in `skills/` into your client's skills folder. The skills load guides with the bridge tool `get_guide`; without it they read `../../guides/<id>.md` or fetch the guide from GitHub. A client without skills can load `skills/meloduo/SKILL.md` as instructions.
 
 ## Develop the bridge
 
@@ -37,4 +38,4 @@ Every MCP session starts a thin stdio proxy (`src/index.ts`). The proxies share 
 
 ## License
 
-MIT, see [LICENSE](LICENSE). It covers the bridge and the skills in this repository, not the Meloduo app.
+MIT, see [LICENSE](LICENSE). It covers the bridge, the skills and the guides in this repository, not the Meloduo app.
