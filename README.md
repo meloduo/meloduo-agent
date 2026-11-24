@@ -2,7 +2,7 @@
 
 Connect any AI agent to Meloduo, a browser DAW. The agent edits the project open in your tab; you see every edit, and one button undoes the agent's whole turn.
 
-- `mcp/`: the MCP bridge. Works with any MCP client (Claude Code, Cursor, VS Code, Codex CLI, Gemini CLI and others).
+- `mcp/`: the MCP bridge. Works with any MCP client. Tested with Claude Code and Cline; setup for Cursor, VS Code and Codex is in `mcp/README.md`.
 - `skills/`: agent skills in the `SKILL.md` format: `meloduo-produce` (an idea to a mastered track) and `meloduo-sound-design` (design the sounds instead of trusting presets).
 
 ## Connect your client
