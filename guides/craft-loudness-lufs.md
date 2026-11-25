@@ -13,13 +13,15 @@ Use a loud target only when the user asks in words for a loud or club master. A 
 
 | Genre | Loud target on request, LUFS |
 |---|---|
-| pop, hyperpop | −9…−7 |
+| pop, hyperpop, future bass | −9…−7 |
 | hip-hop, boom bap, R&B | −10…−8 |
 | trap, drill, phonk | −9…−7 |
 | pop-punk, rock, metal | −10…−8 |
 | house, techno, trance, UK garage, DnB, dubstep | −9…−7 |
 | synthwave, Euro-disco, afrobeats, reggaeton | −10…−8 |
 | ambient, cinematic, lo-fi | stay at −16…−14 |
+
+"Loud but clean" without a number: for trap, hip-hop and EDM genres take −11…−10 LUFS (not −9 or louder), and keep neighbouring sections at least 2 LU apart in `loudnessBySection`: the breakdown 2+ LU under the drop before it, the intro and verse 3+ LU under the drop. If the sections flatten, go quieter, not louder. Without a request for loudness the default stays −14.
 
 Never louder than −7 without the user naming that number.
 

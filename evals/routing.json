@@ -1,0 +1,579 @@
+[
+  {
+    "id": "r01",
+    "request": "Make a trap beat, dark, 140 bpm",
+    "skill": "meloduo-produce",
+    "cues": [
+      "trap",
+      "beat"
+    ],
+    "guides": [
+      "genre-trap",
+      "stage-groove-harmony",
+      "craft-drum-programming"
+    ]
+  },
+  {
+    "id": "r02",
+    "request": "My mix is muddy, fix it",
+    "skill": "meloduo-mix",
+    "cues": [
+      "mud"
+    ],
+    "guides": [
+      "craft-frequency-slots",
+      "craft-mix-diagnosis",
+      "tool-eq"
+    ]
+  },
+  {
+    "id": "r03",
+    "request": "My 808 sounds like a sub only, I can't hear it on a phone",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "808",
+      "sub"
+    ],
+    "guides": [
+      "role-808",
+      "tool-808"
+    ]
+  },
+  {
+    "id": "r04",
+    "request": "Add a riser before the drop",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "riser",
+      "drop"
+    ],
+    "guides": [
+      "role-riser-impact",
+      "tool-automation",
+      "craft-transitions"
+    ]
+  },
+  {
+    "id": "r05",
+    "request": "Master this for Spotify",
+    "skill": "meloduo-mix",
+    "cues": [
+      "spotify"
+    ],
+    "guides": [
+      "craft-loudness-lufs",
+      "tool-master-loudness",
+      "stage-master"
+    ]
+  },
+  {
+    "id": "r06",
+    "request": "Kick and bass fight each other",
+    "skill": "meloduo-mix",
+    "cues": [
+      "kick and bass"
+    ],
+    "guides": [
+      "craft-kick-bass",
+      "tool-sidechain-duck",
+      "role-808"
+    ]
+  },
+  {
+    "id": "r07",
+    "request": "Write a pop-punk song about summer",
+    "skill": "meloduo-produce",
+    "cues": [
+      "pop-punk",
+      "song"
+    ],
+    "guides": [
+      "genre-pop-punk"
+    ]
+  },
+  {
+    "id": "r08",
+    "request": "Make a synthwave pad, wide and warm",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "synthwave",
+      "pad"
+    ],
+    "guides": [
+      "genre-synthwave",
+      "role-pad",
+      "tool-synth-modulation"
+    ]
+  },
+  {
+    "id": "r09",
+    "request": "Drum and bass track with a rolling bassline",
+    "skill": "meloduo-produce",
+    "cues": [
+      "drum and bass",
+      "bassline",
+      "track"
+    ],
+    "guides": [
+      "genre-dnb",
+      "craft-bassline-writing",
+      "role-mid-bass"
+    ]
+  },
+  {
+    "id": "r10",
+    "request": "Make a house track, 124 bpm, with a groove",
+    "skill": "meloduo-produce",
+    "cues": [
+      "house",
+      "groove",
+      "track"
+    ],
+    "guides": [
+      "genre-house",
+      "craft-groove-swing"
+    ]
+  },
+  {
+    "id": "r11",
+    "request": "My track is too quiet",
+    "skill": "meloduo-mix",
+    "cues": [
+      "too quiet"
+    ],
+    "guides": [
+      "craft-loudness-lufs",
+      "tool-master-loudness",
+      "stage-master"
+    ]
+  },
+  {
+    "id": "r12",
+    "request": "Make the chorus hit harder",
+    "skill": "meloduo-produce",
+    "cues": [
+      "chorus"
+    ],
+    "guides": [
+      "craft-section-contrast",
+      "stage-form"
+    ]
+  },
+  {
+    "id": "r13",
+    "request": "The mix sounds harsh in the highs",
+    "skill": "meloduo-mix",
+    "cues": [
+      "harsh"
+    ],
+    "guides": [
+      "craft-mix-diagnosis",
+      "tool-eq"
+    ]
+  },
+  {
+    "id": "r14",
+    "request": "It sounds too wet, the reverb washes everything out",
+    "skill": "meloduo-mix",
+    "cues": [
+      "too wet"
+    ],
+    "guides": [
+      "craft-space-depth",
+      "tool-reverb",
+      "tool-buses-sends"
+    ]
+  },
+  {
+    "id": "r15",
+    "request": "My mix falls apart in mono",
+    "skill": "meloduo-mix",
+    "cues": [
+      "mono",
+      "mix"
+    ],
+    "guides": [
+      "craft-stereo-width",
+      "craft-low-end-mono"
+    ]
+  },
+  {
+    "id": "r16",
+    "request": "Make my mix sound wider",
+    "skill": "meloduo-mix",
+    "cues": [
+      "wide",
+      "mix"
+    ],
+    "guides": [
+      "craft-stereo-width",
+      "tool-saturation-amp-width"
+    ]
+  },
+  {
+    "id": "r17",
+    "request": "I got a render warning about clash",
+    "skill": "meloduo-mix",
+    "cues": [
+      "render warning",
+      "clash"
+    ],
+    "guides": [
+      "tool-render-preview",
+      "craft-mix-diagnosis",
+      "craft-frequency-slots"
+    ]
+  },
+  {
+    "id": "r18",
+    "request": "Match the tone of my reference track",
+    "skill": "meloduo-mix",
+    "cues": [
+      "tone"
+    ],
+    "guides": [
+      "tool-match-eq"
+    ]
+  },
+  {
+    "id": "r19",
+    "request": "Turn my 8-bar loop into a full song",
+    "skill": "meloduo-produce",
+    "cues": [
+      "loop",
+      "song"
+    ],
+    "guides": [
+      "craft-loop-to-song",
+      "stage-form",
+      "craft-section-contrast"
+    ]
+  },
+  {
+    "id": "r20",
+    "request": "Remix this track into techno",
+    "skill": "meloduo-produce",
+    "cues": [
+      "remix",
+      "techno",
+      "track"
+    ],
+    "guides": [
+      "craft-remix",
+      "genre-techno"
+    ]
+  },
+  {
+    "id": "r21",
+    "request": "Make a track like my favorite artist, Billie Eilish",
+    "skill": "meloduo-produce",
+    "cues": [
+      "artist",
+      "track"
+    ],
+    "guides": [
+      "craft-artist-core",
+      "craft-reference-analysis",
+      "role-vocal-substitute"
+    ]
+  },
+  {
+    "id": "r22",
+    "request": "Write a catchy hook for a pop song",
+    "skill": "meloduo-produce",
+    "cues": [
+      "hook",
+      "pop",
+      "song"
+    ],
+    "guides": [
+      "stage-hook",
+      "craft-melody-motif",
+      "craft-candidates",
+      "tool-check-melody",
+      "genre-pop"
+    ]
+  },
+  {
+    "id": "r23",
+    "request": "The groove sounds robotic, add some swing",
+    "skill": "meloduo-produce",
+    "cues": [
+      "groove",
+      "robotic",
+      "swing"
+    ],
+    "guides": [
+      "craft-groove-swing",
+      "craft-drum-programming"
+    ]
+  },
+  {
+    "id": "r24",
+    "request": "Write a countermelody that answers the hook",
+    "skill": "meloduo-produce",
+    "cues": [
+      "countermelody",
+      "hook"
+    ],
+    "guides": [
+      "craft-call-response",
+      "stage-hook"
+    ]
+  },
+  {
+    "id": "r25",
+    "request": "Write a sad chord progression for a lofi beat",
+    "skill": "meloduo-produce",
+    "cues": [
+      "chord",
+      "lofi",
+      "beat"
+    ],
+    "guides": [
+      "craft-harmony-voicing",
+      "genre-lofi"
+    ]
+  },
+  {
+    "id": "r26",
+    "request": "Write a lofi hip hop beat with dusty keys",
+    "skill": "meloduo-produce",
+    "cues": [
+      "lofi",
+      "keys",
+      "beat"
+    ],
+    "guides": [
+      "genre-lofi",
+      "role-keys"
+    ]
+  },
+  {
+    "id": "r27",
+    "request": "Make an EDM drop with a big supersaw",
+    "skill": "meloduo-produce",
+    "cues": [
+      "drop"
+    ],
+    "guides": [
+      "stage-full-drop",
+      "craft-transitions"
+    ]
+  },
+  {
+    "id": "r28",
+    "request": "My song is boring and repetitive",
+    "skill": "meloduo-produce",
+    "cues": [
+      "boring",
+      "repetitive",
+      "song"
+    ],
+    "guides": [
+      "craft-pattern-variation",
+      "craft-ear-candy"
+    ]
+  },
+  {
+    "id": "r29",
+    "request": "The lead sounds flat and generic",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "lead",
+      "flat"
+    ],
+    "guides": [
+      "role-lead",
+      "tool-synth"
+    ]
+  },
+  {
+    "id": "r30",
+    "request": "Make a reese bass for a dubstep track",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "reese",
+      "dubstep"
+    ],
+    "guides": [
+      "role-mid-bass",
+      "tool-wavetable",
+      "genre-dubstep"
+    ]
+  },
+  {
+    "id": "r31",
+    "request": "Write a rock song with a guitar solo",
+    "skill": "meloduo-produce",
+    "cues": [
+      "rock",
+      "guitar",
+      "song"
+    ],
+    "guides": [
+      "genre-rock",
+      "role-lead-guitar",
+      "role-rhythm-guitar",
+      "tool-guitar"
+    ]
+  },
+  {
+    "id": "r32",
+    "request": "Make an afrobeats track with percussion",
+    "skill": "meloduo-produce",
+    "cues": [
+      "afrobeats",
+      "percussion",
+      "track"
+    ],
+    "guides": [
+      "genre-afrobeats",
+      "role-percussion"
+    ]
+  },
+  {
+    "id": "r33",
+    "request": "Reggaeton beat with a dembow",
+    "skill": "meloduo-produce",
+    "cues": [
+      "reggaeton",
+      "beat"
+    ],
+    "guides": [
+      "genre-reggaeton",
+      "stage-groove-harmony",
+      "craft-drum-programming"
+    ]
+  },
+  {
+    "id": "r34",
+    "request": "I want a gated reverb snare",
+    "skill": "meloduo-sound-design",
+    "cues": [
+      "gated",
+      "snare"
+    ],
+    "guides": [
+      "role-snare-clap",
+      "tool-reverb"
+    ]
+  },
+  {
+    "id": "r35",
+    "request": "Add a vocal line, I have no singer",
+    "skill": "meloduo-produce",
+    "cues": [
+      "vocal"
+    ],
+    "guides": [
+      "role-vocal-substitute",
+      "craft-engine-limits",
+      "tool-sampler"
+    ]
+  },
+  {
+    "id": "r36",
+    "request": "Can Meloduo do tape saturation or chorus?",
+    "skill": "meloduo",
+    "cues": [
+      "tape"
+    ],
+    "guides": [
+      "craft-engine-limits",
+      "tool-web-plugins"
+    ]
+  },
+  {
+    "id": "r37",
+    "request": "Make my sketch better, I don't know what is wrong",
+    "skill": "meloduo-produce",
+    "cues": [
+      "sketch",
+      "better"
+    ],
+    "guides": [
+      "craft-fix-sketch",
+      "craft-mix-diagnosis"
+    ]
+  },
+  {
+    "id": "r38",
+    "request": "Make an ambient track with slow evolving textures",
+    "skill": "meloduo-produce",
+    "cues": [
+      "ambient",
+      "texture",
+      "track"
+    ],
+    "guides": [
+      "genre-ambient",
+      "role-texture",
+      "tool-synth-modulation"
+    ]
+  },
+  {
+    "id": "r39",
+    "request": "The hook is buried, I can't hear it over the rest",
+    "skill": "meloduo-mix",
+    "cues": [
+      "buried",
+      "hook"
+    ],
+    "guides": [
+      "craft-gain-staging-balance"
+    ]
+  },
+  {
+    "id": "r40",
+    "request": "All the sections are equally loud",
+    "skill": "meloduo-mix",
+    "cues": [
+      "sections"
+    ],
+    "guides": [
+      "craft-section-contrast",
+      "craft-loudness-lufs"
+    ]
+  },
+  {
+    "id": "r41",
+    "request": "Write a lead guitar riff in a metal track",
+    "skill": "meloduo-produce",
+    "cues": [
+      "metal",
+      "guitar",
+      "track"
+    ],
+    "guides": [
+      "genre-metal",
+      "role-lead-guitar",
+      "tool-guitar"
+    ]
+  },
+  {
+    "id": "r42",
+    "request": "Make a future bass drop with wide supersaw chords",
+    "skill": "meloduo-produce",
+    "cues": [
+      "future bass",
+      "drop"
+    ],
+    "guides": [
+      "genre-future-bass"
+    ]
+  },
+  {
+    "id": "r43",
+    "request": "Kawaii future bass track, bright lead, 150 bpm",
+    "skill": "meloduo-produce",
+    "cues": [
+      "future bass",
+      "lead"
+    ],
+    "guides": [
+      "genre-future-bass",
+      "role-lead"
+    ]
+  }
+]

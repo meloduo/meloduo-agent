@@ -20,6 +20,16 @@ Ask in the brief which way the user wants, with ready answers. If the user does 
 - **Step by step.** After each stage, stop: say in 2–4 lines what you made and what to listen to, then wait for "next" or a correction. The user's ears replace yours. Merge no stages. With a named reference this is the way to get close to the record (craft-reference-analysis, "Two modes").
 - **Inspiration.** Go through all ten stages yourself and report at the end. If the user named an artist or a track, say once at the start, in one sentence and without listing reasons, that the track will be inspired by the reference and will not match it one to one.
 
+## Sketch or short request
+
+A loop, a sketch or a request of about 16–32 bars (or "a quick beat") takes the short path. A full track keeps the full path below.
+
+- Load: `stage-brief` (brief and track card in one message; `stage-track-card` only if the card is unclear), `stage-groove-harmony`, `stage-hook`, `stage-full-drop` (it is merged with balance), `stage-balance`, `stage-master`, and the genre guide.
+- Skip, or load only on need: `stage-form`, `stage-variations-transitions`, `stage-fx-movement`. A sketch has one or two sections: a one-line layer table and one transition (a riser or a fill) are enough. Load `stage-form` if the user asks for a structure, and `stage-fx-movement` if the genre signature is the point (a pump, a sweep).
+- Merge stages 5 and 9 into one pass: full section first, then levels from `render_preview`.
+- The "Before the report" check about loading all ten guides does not apply. List the guides you loaded and say it was a sketch.
+- If the user then asks to extend the sketch into a song, load the skipped stage guides and continue with the full path.
+
 ## Guides
 
 Load the stage guide before its stage, even when the track card or the genre guide seems to cover it: each one holds a check that is in no other guide (the "Only there" column). This is the method, not an extra: tests show that skipped stage guides give flat second drops and copy-paste sections. Merging stages is fine; skipping their guides is not. Load a "When needed" guide only when the stage asks for it (a weak hook, a kick and bass clash, a render warning). Load guides with the bridge tool `get_guide({topics:[...]})`; without it, read `../../guides/<id>.md` from this folder (the meloduo-agent repository). Take at most 4 "When needed" guides per step (stage guides do not count) and do not reload one you have.
@@ -61,8 +71,8 @@ Sound design is a separate skill, `meloduo-sound-design`. Call it at stages 3, 5
 1. You can say in one sentence how the track differs from the default track (close-to-the-record mode: how close it is to the reference, and what the studio could not match).
 2. The hook was picked from several candidates (close mode: candidates only for a new topline and for the sounds, not for the form and the parts).
 3. The drop or chorus sounds full, and the sections differ.
-4. The transitions have FX movement.
+4. The transitions have FX movement (a sketch: one transition is enough).
 5. The **always** rules hold.
-6. You loaded all ten stage guides. List them in the report; name any you skipped and why.
+6. You loaded all ten stage guides (a sketch: those of the short path). List them in the report; name any you skipped and why.
 
 Then write `notes` with `set_project_info` and report to the user: `craft-delivery-report`.

@@ -29,9 +29,9 @@ You cannot hear the mix. Read it from `render_preview`: loudness, peaks, band sh
 | peaky drums, `chainPeak`, compressor too deep | `craft-mix-diagnosis`, `tool-compressor` |
 | pumping, sidechain | `tool-sidechain-duck`, `tool-compressor` |
 | too wet, too dry, `dry` hint | `craft-space-depth`, `tool-reverb`, `tool-buses-sends` |
-| narrow, wide, falls apart in mono | `craft-stereo-width`, `craft-low-end-mono` |
+| narrow, wide, falls apart in mono | `craft-stereo-width`, `craft-low-end-mono`, `tool-saturation-amp-width` |
 | sections all as loud ("Flat sections") | `craft-section-contrast`, `craft-loudness-lufs` |
-| too quiet or too loud, Spotify, club | `craft-loudness-lufs`, `tool-master-loudness` |
+| too quiet or too loud, Spotify, club | `craft-loudness-lufs`, `tool-master-loudness`, `stage-master` |
 | tone like a reference track | `tool-match-eq` |
 | any warning you do not know | `tool-render-preview` |
 

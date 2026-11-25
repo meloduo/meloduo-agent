@@ -23,7 +23,7 @@ export const ALIASES: Record<string, string> = {
   notation: 'tool-notation-lines', euclid: 'tool-notation-lines', triplets: 'tool-notation-lines', limits: 'craft-engine-limits',
   chorus: 'craft-engine-limits', mud: 'craft-frequency-slots', 'kick-and-bass': 'craft-kick-bass', wet: 'craft-space-depth',
   width: 'craft-stereo-width', mono: 'craft-low-end-mono', hook: 'stage-hook', melody: 'craft-melody-motif', chords: 'craft-harmony-voicing',
-  drill: 'genre-trap', rock: 'genre-rock', 'hard-rock': 'genre-rock', 'classic-rock': 'genre-rock', punk: 'genre-pop-punk', 'lo-fi': 'genre-lofi', 'drum-and-bass': 'genre-dnb', garage: 'genre-uk-garage',
+  drill: 'genre-trap', kawaii: 'genre-future-bass', rock: 'genre-rock', 'hard-rock': 'genre-rock', 'classic-rock': 'genre-rock', punk: 'genre-pop-punk', 'lo-fi': 'genre-lofi', 'drum-and-bass': 'genre-dnb', garage: 'genre-uk-garage',
   'euro-disco': 'genre-eurodisco', italo: 'genre-eurodisco', 'italo-disco': 'genre-eurodisco', 'euro-pop': 'genre-eurodisco',
 };
 

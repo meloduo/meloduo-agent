@@ -77,6 +77,7 @@ Four-on-the-floor dance music: deep house (warm 7th chords, a soft legato bass) 
 |---|---|---|
 | House, EDM | pumping | duck on the bass 6–10 dB and a Pump bus 4–8 dB; a Low cut sweep on the music bus in every build; delay 1/8D on plucks; a long reverb in the breakdown |
 
+- Clean low end (deep house): the numbers are in `craft-kick-bass` (one owner of the sub, bass 1.5–4 dB under the kick, `duck` depth by goal: 2–4 dB to separate the bass, 4–6 dB for a deep house bass, 6–10 dB for pumping), `craft-frequency-slots` (mud 200–500 Hz) and the mix table in `craft-gain-staging-balance` (chords and pads high-passed at 150–200 Hz, hats 200–400 Hz, percussion 150–300 Hz, snare and clap 80–100 Hz). Orientation: kick fundamental 50–60 Hz, bass 40–120 Hz on the chord root and tuned to the kick; the kick is short (decay under about 250 ms) and the bass sits in the gaps or is ducked from the kick (depths above); the music bus ducks 4–8 dB from the kick; low side below 100–150 Hz in mono (craft-low-end-mono).
 - Route every non-drum part to one bus and duck it from the kick (tool-buses-sends).
 - Master at −14 LUFS; a loud master only when the user asks (targets: craft-loudness-lufs).
 
@@ -102,4 +103,4 @@ Four-on-the-floor dance music: deep house (warm 7th chords, a soft legato bass) 
 
 ## Related
 
-`tool-sidechain-duck`, `role-stab-chords`, `stage-track-card`, `craft-groove-swing`
+`craft-kick-bass`, `craft-frequency-slots`, `craft-low-end-mono`, `tool-sidechain-duck`, `role-stab-chords`, `stage-track-card`, `craft-groove-swing`

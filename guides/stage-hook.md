@@ -14,7 +14,16 @@ A strong hook is a short motif and its development, not a stream of notes. The b
 5. Compare the candidates with the questions below. Tell the user your pick and the reason in one line. A strong runner-up can become a countermelody. It fits a bridge or breakdown only if it is simpler than the hook (craft-call-response). Delete the patterns you do not use.
 6. Hook timbre: Lead presets in Mono glide on every note, so you usually need `"mode":"Legato"` (tool-synth).
 
-Check yourself: is the rhythm memorable after one listen? Does the hook push forward at the track's tempo, or does it hang? Does the motif develop, rather than loop or get lost? Does `check_melody` show the hook fighting the chords?
+## Chord stab or chord wall as the hook (house, future bass)
+
+When the chords carry the hook, there is no lead melody and `check_melody` against the chords does not apply (it checks a voice-like line). Candidates differ in other things:
+
+1. Rhythm: 3–4 stab or chord rhythms (offbeat, syncopated 0, 3, 6, 10, 12, held with a pump), each with a clear accent.
+2. Voicing: the top note of the chord is the tune. Run `check_melody` on the chord channel (it reads the top voice), with the bass pattern as `against` if useful; or check the voicing by numbers only (no clusters in 200–500 Hz, craft-harmony-voicing).
+3. Compare with the six questions below, reading "peak" as the chord change that lifts the top note, and "surprise" as a rhythmic push or one borrowed chord.
+4. A short top-line answer or a chop in the gaps can be the second candidate.
+
+Check yourself: is the rhythm memorable after one listen? Does the hook push forward at the track's tempo, or does it hang? Does the motif develop, rather than loop or get lost? Does `check_melody` show the hook fighting the chords? (For a chord hook, read the last question as: do the chords clash with the bass?)
 
 ## Questions for comparing candidates
 

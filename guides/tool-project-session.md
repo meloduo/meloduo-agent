@@ -6,7 +6,7 @@ description: Read the project, pick the tab, keep the brief and session notes, h
 # Project and session
 
 1. **Always** give `why`: one sentence in the user's language with the reason, not a retelling of the arguments.
-2. **Always** respect the user's edits. Read a result with `changedSinceYourLastCall` and take it into account. Compare a rejected edit with the changes and retry it. Do not undo what the user changed by hand.
+2. **Always** respect the user's edits. Read a result with `changedSinceYourLastCall` and take it into account. Compare a rejected edit with the changes and retry it. Do not undo what the user changed by hand: `undo` refuses when the last edit is the user's, so ask the user to undo it.
 3. **Always** read before you edit: `get_project_state` at the start and whenever something is unclear. Its `info` holds the brief and notes of earlier sessions: continue from them instead of asking again. Several tabs: `list_tabs`, then `use_tab` with `projectId`. Take ids from results.
 4. The grid is 1/16; steps and bars count from 0. Read the note line syntax once with `get_notation`.
 5. **Always** one part, one pattern. A "whole section" pattern cannot be thinned out with clips; if that happened, use `split_pattern` with `groups`.

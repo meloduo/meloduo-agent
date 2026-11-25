@@ -11,7 +11,7 @@ Narrow low-end ducking: an `eq` on the bass with a dynamic band keyed from the k
 
 ## Depth by genre
 
-`duck` follows the source channel's notes, not its sound: `depth` 0–40 dB, `attack` 0.1–50 ms, `release` 20–1000 ms. Its parameters cannot be automated; for pumping that changes by section use comp Pumping with a `threshold` lane.
+`duck` follows the source channel's notes, not its sound, so in a section where the source has no notes (a drop without a kick) it does nothing: add a kick there or set the level by hand. `depth` 0–40 dB, `attack` 0.1–50 ms, `release` 20–1000 ms. Its parameters cannot be automated; for pumping that changes by section use comp Pumping with a `threshold` lane.
 
 | Use | `depth` | `release` |
 |---|---|---|

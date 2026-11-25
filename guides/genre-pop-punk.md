@@ -18,7 +18,9 @@ Use it for pop-punk, punk rock, alt rock and emo-pop: fast, driving straight eig
 | Pop-punk, rock | 160 (140–190) or 100–130 | 0, 8 and syncopations | 4, 12 | eighths on hat or ride |
 
 - Pop-punk usually sits at 160–190; many classics are near 174.
-- Punk beat (verse or chorus drive): kick on 0, 4, 8, 12 and snare on 2, 6, 10, 14, alternating in eighths. Crash or open hat in eighths in the chorus.
+- Steps are 16th notes, 16 per bar: the beats are 0, 4, 8, 12 and the eighth-note offbeats ("and") are 2, 6, 10, 14.
+- Default, the fast backbeat: kick on 0 and 8 (plus a syncopation such as 6 or 10), snare on 4 and 12, eighths on the hat. Crash or open hat in eighths in the chorus.
+- Variant, the punk or polka beat (a hard, driving verse or chorus): kick on every beat 0, 4, 8, 12 and snare on the offbeats 2, 6, 10, 14, so the two alternate in eighths. Use it for a few bars of drive, not for a whole song.
 - Half time for a pre-chorus or bridge: kick 0, snare 8.
 - Fills on toms at the end of each 4- or 8-bar phrase; a crash on the first beat of every new section.
 

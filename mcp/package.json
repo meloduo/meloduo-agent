@@ -32,6 +32,7 @@
     "stop": "tsx src/stop.ts",
     "smoke": "tsx src/smoke.ts",
     "check-guides": "tsx src/check-guides.ts",
+    "check-evals": "tsx src/check-evals.ts",
     "typecheck": "tsc -p .",
     "build": "esbuild src/index.ts src/daemon.ts src/stop.ts --bundle --platform=node --format=esm --target=node20 --packages=external --outdir=dist --banner:js=\"#!/usr/bin/env node\" && node -e \"const fs=require('fs');fs.rmSync('dist/guides',{recursive:true,force:true});fs.cpSync('../guides','dist/guides',{recursive:true})\"",
     "prepublishOnly": "pnpm typecheck && pnpm build"
