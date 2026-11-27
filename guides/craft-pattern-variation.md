@@ -17,7 +17,7 @@ description: Vary repeated patterns: A and A-end, cloned variants swapped into c
 
 ## Meloduo recipe: variants that land in the arrangement
 
-1. `clone_pattern` → edit the copy (a fill, a dropout, an extra hit, new hats) → `edit_clips` `{id, patternId}` on the clips that should change. The original keeps playing elsewhere.
+1. `clone_pattern` → edit the copy (a fill, a dropout, an extra hit, new hats) → `edit_clips` `{id, patternId}` on the clips that should change. The original keeps playing elsewhere. For only the last bar of a clip, `split` it there first and swap the right half (with `fromBar` at that bar of the clone).
 2. A long stretch with no change sounds like a loop: something should change at least every 8 bars and clearly every 16.
 3. Reuse before you add: one pattern per part and section type, its variants made by `clone_pattern`, and repeats placed as clips (`place_patterns`). A 3-minute track usually needs 8–15 patterns, not 25+; a new pattern for every 4 bars is hard for the user to edit.
 4. Details: tool-patterns-clips.

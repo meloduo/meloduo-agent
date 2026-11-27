@@ -11,7 +11,7 @@ description: Use the user's imported audio: sampler channels, slices by start an
 - `get_project_state` lists `samples` (`id`, `name`, `seconds`, `channels`) and audio clips.
 - `place_audio`: `sampleId`, `trackId`, `bar`, `bars` (default: the whole file at the project tempo), `offset` (seconds into the file), `gainDb`, `channelId` (a sampler channel; without it the tool uses or makes one).
 - `set_sampler`: `sampleId`, `root` (the MIDI note at which the file plays as recorded), `tune`, `start` and `end` (0–1 of the file), `mode` One-shot or Gate, `loop`, `attack`, `release`, `gain`.
-- `edit_clips` moves, resizes and re-gains audio clips (`bar`, `bars`, `offset`, `gainDb`); clips start and last whole bars.
+- `edit_clips` moves, resizes, mutes and re-gains audio clips (`bar`, `bars`, `muted`, `offset`, `gainDb`); `bar` and `bars` take fractional bars. `split` `[{id, bar}]` cuts an audio clip; the right half goes on in the file.
 - There is no time stretch: a file plays at its own tempo. Set the project tempo to the file's tempo before you build around it, and say so.
 - A sampler channel cannot be automated except volume and pan; `set_main_pitch` does not move it.
 

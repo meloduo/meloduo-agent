@@ -11,7 +11,7 @@ description: Read the project, pick the tab, keep the brief and session notes, h
 4. The grid is 1/16; steps and bars count from 0. Read the note line syntax once with `get_notation`.
 5. **Always** one part, one pattern. A "whole section" pattern cannot be thinned out with clips; if that happened, use `split_pattern` with `groups`.
 6. Render windows (`fromBar`/`toBar`) and the full song rarely; pass `stems: false` when you do not need stems. One mix edit, one render: look at `change`.
-7. **Always** clear solo and mute that you set for a check.
+7. **Always** clear solo and mute that you set for a check, also clip `muted`.
 8. You cannot import audio (the user does: File > Import audio), export a file, listen, or automate sends, `duck`, drums or the sampler. Audio the user imported you can place and cut: `place_audio`, `set_sampler`, `edit_clips`. Do not pretend you can do more.
 
 ## Related

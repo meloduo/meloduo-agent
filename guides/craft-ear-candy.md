@@ -24,7 +24,7 @@ Small events:
 2. A delay throw: the Throw bus with a volume lane opened for one note (tool-delay).
 3. A reverse-like swell: a synth note with a long attack cut on the beat, or a rising volume lane with a sharp reset; there is no reverse audio.
 4. A long tail on the last note of a phrase: a Hall bus volume lane raised for that note and back after it (tool-automation).
-5. A bar without kick, or one tom hit: `clone_pattern` of the drums and `edit_clips` on that one bar (tool-patterns-clips).
+5. A bar without kick: `edit_clips` `split` the kick clip at both ends of that bar and mute the middle part. One tom hit: `clone_pattern` of the drums and `edit_clips` on that one bar (tool-patterns-clips).
 6. Textures and one-shots: role-texture.
 
 ## Check

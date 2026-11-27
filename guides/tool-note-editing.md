@@ -9,7 +9,7 @@ description: Edit existing notes: transpose, copy, thin out, scale velocity, hum
 
 | Tool | What it does | Typical use |
 |---|---|---|
-| `edit_notes` | changes notes by id | fix a clash, lengthen a note, move one hit |
+| `edit_notes` | changes, removes or splits notes by id; `split` `[{id, step}]` replies `{id, step, newId}` | fix a clash, lengthen a note, cut a long note into two hits |
 | `transpose_notes` | moves notes by semitones | a key lift for the last chorus |
 | `copy_notes` | copies notes, `semitones`, `patternIds` | an octave double (+12) in every section at once |
 | `remove_notes` | removes by pattern, channel, step and pitch range | hats out under a break, thinning a verse |
