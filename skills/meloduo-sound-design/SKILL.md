@@ -19,13 +19,14 @@ Load the role guide and its tool guide with the bridge tool `get_guide` (without
 |---|---|---|
 | 808 | `role-808` | `tool-808` |
 | sub, synth bass, reese | `role-sub-bass`, `role-mid-bass` | `tool-synth`, `tool-wavetable` |
-| bass guitar, guitars | `role-bass-guitar`, `role-rhythm-guitar`, `role-lead-guitar` | `tool-guitar`, `tool-saturation-amp-width` |
+| bass guitar, guitars | `role-bass-guitar`, `role-rhythm-guitar`, `role-lead-guitar` | `tool-guitar`, `tool-guitar-rig`, `tool-saturation-amp-width` |
 | lead, hook | `role-lead` | `tool-synth` |
 | pad, keys, pluck, arp, stab | `role-pad`, `role-keys`, `role-pluck-arp`, `role-stab-chords` | `tool-synth-modulation`, `tool-arp` |
 | kick, snare, clap, hats, percussion | `role-kick`, `role-snare-clap`, `role-hats-cymbals`, `role-percussion` | `tool-drums` |
 | riser, impact, transition | `role-riser-impact` | `tool-automation` |
 | texture, drone, ear candy; layering one role from several sounds | `role-texture`, `craft-sound-layering` | `tool-reverb` |
-| something Meloduo lacks (chorus, tape, gate on a guitar) | `craft-engine-limits` | — |
+| chorus, flanger, phaser on a bass, guitar, pad or bus | `tool-modulation-fx` | `role-bass-guitar`, `role-pad` |
+| something Meloduo lacks (tape, bitcrusher) | `craft-engine-limits` | — |
 
 ## Method
 

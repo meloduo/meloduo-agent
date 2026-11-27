@@ -8,7 +8,7 @@ description: Saturation, guitar amp and stereo width as character: shapes, drive
 ## What exists
 
 - `sat`: the type is the parameter `shape` (Soft, Tube, Hard), so "sat Tube" in the guides means `add_effect` `{type: "sat", params: {shape: "Tube"}}`; `drive` 0–30 dB, `tone` in Hz, `mix` 0–1, `out` in dB. The preset "Warm tube" is `shape` Tube with `drive` 8 and `mix` 0.7.
-- `amp`: the guitar amp with `gain`, `bass`, `mid`, `treble`, a cabinet and `out` (tool-guitar).
+- `amp`: the guitar amp with five models, `gain`, `bass`, `mid`, `treble`, `presence`, `depth`, `sag`, `master`, cabinets with a mic, and `out`; `drive` pedals and a `gate` come before it (tool-guitar-rig).
 - `width`: widens a stereo source only, with `bassMono` to keep the lows mono (craft-stereo-width).
 - Numbers of all three can be automated; their choices cannot.
 
@@ -21,4 +21,4 @@ description: Saturation, guitar amp and stereo width as character: shapes, drive
 
 ## Related
 
-`tool-guitar`, `craft-stereo-width`, `role-808`, `tool-buses-sends`
+`tool-guitar`, `tool-guitar-rig`, `craft-stereo-width`, `role-808`, `tool-buses-sends`

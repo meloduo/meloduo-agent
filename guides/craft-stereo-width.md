@@ -8,7 +8,7 @@ description: Panning and width: a panning plan, width only on stereo sources, co
 ## Stereo
 
 1. Kick, snare, bass and hook in the centre; hats ±0.15–0.3; percussion ±0.3–0.6; hook double ±0.6–1.
-2. `width` on the master or a bus: `bassMono` 100–150 Hz; pads 110–140 %. `width` widens only a stereo source: a synth with `unison` of 2 or more, or a bus with reverb. On a mono channel it does nothing.
+2. `width` on the master or a bus: `bassMono` 100–150 Hz; pads 110–140 %. `width` widens only a stereo source: a synth with `unison` of 2 or more, or a bus with reverb. On a mono channel it does nothing. A chorus, flanger or phaser turns a mono channel into a stereo one first (tool-modulation-fx); keep it off the lows.
 3. The arrangement gives the loudness contrast between sections, not the fader.
 
 Targets: `stereo.correlation` above +0.3; absolute `monoLossDb` under 3 dB; `lowSidePct` under 5 %.

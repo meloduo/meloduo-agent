@@ -30,7 +30,7 @@ Say what the engine cannot do before you start (no vocals, no audio import by yo
 
 Knowledge lives in small guides, one topic each. Load them with the bridge tool `get_guide({topics: [...]})`: up to 4 ids or words ("gated reverb"); `section` returns one heading. Without that tool read `../../guides/<id>.md` from this folder or https://raw.githubusercontent.com/meloduo/meloduo-agent/main/guides/<id>.md. At most 4 "When needed" guides per step; the stage guides of `meloduo-produce` do not count. The genre guide once per track (two closest when the genre is not in the list).
 
-Genres (`genre-<x>`): pop, rnb, trap (also drill), boom-bap, lofi, phonk, house, uk-garage, techno, trance, dnb (also drum and bass), dubstep, future-bass (also kawaii future bass), synthwave, eurodisco (also Italo, late-1980s Euro-pop), pop-punk (also punk, emo), rock (classic, hard, blues rock), metal, ambient, afrobeats (also amapiano), reggaeton, hyperpop, cinematic. Another genre: the nearest one, and say so.
+Genres (`genre-<x>`): pop, rnb, trap (also drill), boom-bap, lofi, phonk, house, uk-garage, techno, trance, dnb (also drum and bass), dubstep, future-bass (also kawaii future bass), synthwave, post-punk (also darkwave, coldwave), eurodisco (also Italo, late-1980s Euro-pop), pop-punk (also punk, emo), rock (classic, hard, blues rock), metal, ambient, afrobeats (also amapiano), reggaeton, hyperpop, cinematic. Another genre: the nearest one, and say so.
 
 ## Task map
 
@@ -53,7 +53,8 @@ Genres (`genre-<x>`): pop, rnb, trap (also drill), boom-bap, lofi, phonk, house,
 | lead, pad, keys, pluck, arp | `role-lead`, `role-pad`, `role-keys`, `role-pluck-arp` |
 | static sound, texture, layering | `tool-synth-modulation`, `role-texture`, `craft-sound-layering` |
 | vocals, rap, the user's samples | `role-vocal-substitute`, `tool-sampler`, `craft-engine-limits` |
-| "does Meloduo have chorus, tape, …", web plugins | `craft-engine-limits`, `tool-web-plugins` |
+| chorus, flanger, phaser | `tool-modulation-fx` |
+| "does Meloduo have tape, …", web plugins | `craft-engine-limits`, `tool-web-plugins` |
 | transition, fill, build, drop | `stage-full-drop`, `craft-transitions`, `craft-drum-programming`, `role-riser-impact`, `tool-automation` |
 | boring, repetitive | `craft-pattern-variation`, `craft-ear-candy` |
 | too wet or too dry | `craft-space-depth`, `tool-reverb`, `tool-buses-sends` |

@@ -7,7 +7,7 @@ description: Read and set the user's own web plugins (WAM effects and instrument
 
 ## When
 
-The user added a web plugin (an effect of type `wam` in a chain, or a channel with a web instrument), or a track needs an effect Meloduo does not have (chorus, phaser, flanger, tape) and the user already has a plugin for it.
+The user added a web plugin (an effect of type `wam` in a chain, or a channel with a web instrument), or a track needs an effect Meloduo does not have (tape, a bitcrusher; chorus, flanger and phaser are built in: tool-modulation-fx) and the user already has a plugin for it.
 
 ## Practices
 

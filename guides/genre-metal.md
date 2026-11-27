@@ -87,7 +87,7 @@ In metal and heavy rock a tight wall matters more than anything else:
 
 ## Engine limits for this genre
 
-- No noise gate: the tightness comes from writing. End chug notes short, and leave real rests between chugs.
+- Tightness: the rig Metal (gate Tight, drive Tighten, amp Modern metal; tool-guitar-rig), and writing: end chug notes short, leave real rests.
 - No 7- or 8-string range: use `set_main_pitch` (the wall above).
 - No time signature change: write odd groupings in 4/4 (craft-engine-limits).
 

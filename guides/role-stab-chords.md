@@ -47,7 +47,7 @@ Vary the interval shape (+7/+10 against +3/+7), the preset (organ against brass)
 
 ## Engine limits
 
-No chorus or phaser for the wide 90s organ; use unison and the `width` plugin. Details: craft-engine-limits.
+For the wide 90s organ use a chorus (Juno I) or a phaser (Funk) at `mix` 0.3–0.5, plus the `width` plugin (tool-modulation-fx).
 
 ## Related
 

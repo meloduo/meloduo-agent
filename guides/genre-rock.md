@@ -54,7 +54,7 @@ Use it for classic rock, hard rock, blues rock, boogie rock and stadium rock of 
 
 | Genre | Role | Candidates | Edit for character |
 |---|---|---|---|
-| Hard rock | rhythm guitars | Crunch rhythm; Palm-mute chug for a verse only | amp `gain` 18–26 (crunch, not metal), `mid` up, `treble` up; the left one cleaner with a bridge pickup, the right one dirtier; 4x12 and 2x12 cabinets |
+| Hard rock | rhythm guitars | Crunch rhythm; Palm-mute chug for a verse only | amp `gain` 18–26 (crunch, not metal), `mid` up, `treble` up; the left one cleaner with a bridge pickup, the right one dirtier; 4x12 and 2x12 cabinets; rig Classic rock (drive Clean boost, amp Stack crunch) |
 | | lead guitar | Lead | `gain` 26–30, a short room or slapback echo |
 | | bass | guitar Pick bass with amp Bass grit | 8ths on the roots, locked to the kick |
 | | drums | Acoustic Rock kit | a big snare, a short kick, a room reverb on a bus |

@@ -21,7 +21,7 @@ export const ALIASES: Record<string, string> = {
   lufs: 'craft-loudness-lufs', loudness: 'craft-loudness-lufs', mastering: 'tool-master-loudness', master: 'stage-master',
   vocals: 'role-vocal-substitute', vocal: 'role-vocal-substitute', sample: 'tool-sampler', samples: 'tool-sampler',
   notation: 'tool-notation-lines', euclid: 'tool-notation-lines', triplets: 'tool-notation-lines', limits: 'craft-engine-limits',
-  chorus: 'craft-engine-limits', mud: 'craft-frequency-slots', 'kick-and-bass': 'craft-kick-bass', wet: 'craft-space-depth',
+  gate: 'tool-guitar-rig', drive: 'tool-guitar-rig', amp: 'tool-guitar-rig', rig: 'tool-guitar-rig', chorus: 'tool-modulation-fx', flanger: 'tool-modulation-fx', phaser: 'tool-modulation-fx', 'post-punk': 'genre-post-punk', darkwave: 'genre-post-punk', coldwave: 'genre-post-punk', mud: 'craft-frequency-slots', 'kick-and-bass': 'craft-kick-bass', wet: 'craft-space-depth',
   width: 'craft-stereo-width', mono: 'craft-low-end-mono', hook: 'stage-hook', melody: 'craft-melody-motif', chords: 'craft-harmony-voicing',
   drill: 'genre-trap', kawaii: 'genre-future-bass', rock: 'genre-rock', 'hard-rock': 'genre-rock', 'classic-rock': 'genre-rock', punk: 'genre-pop-punk', 'lo-fi': 'genre-lofi', 'drum-and-bass': 'genre-dnb', garage: 'genre-uk-garage',
   'euro-disco': 'genre-eurodisco', italo: 'genre-eurodisco', 'italo-disco': 'genre-eurodisco', 'euro-pop': 'genre-eurodisco',

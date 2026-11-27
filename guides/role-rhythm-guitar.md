@@ -5,7 +5,7 @@ description: Rhythm guitars that are not flat: amp, picking, mute, doubles that 
 
 # Rhythm guitar
 
-A flat guitar is a clean sound without mids and identical doubles. The `amp` gives the distortion.
+A flat guitar is a clean sound without mids and identical doubles. The `amp` gives the distortion; a rig preset gives the whole chain (tool-guitar-rig).
 
 1. **Amp.** `gain` by genre: crunch about 20, pop-punk and rock 24–32, aliasing starts above 34. `mid` up for pop-punk and rock, `bass` moderate (leave the low end to the bass), `treble` for brightness. A 4x12 cabinet is denser and lower, 2x12 medium, 1x12 brighter. The amp's `out` sets the level after distortion; the guitar `gain` barely changes it.
 2. **The voice itself.** `pickPos` (near the neck warmer, near the bridge brighter and meaner), `pickup`, `hardness` (pick attack), `mute` for a chug.
@@ -24,4 +24,4 @@ Variants to compare: 4x12 with high `gain` and raised `mid`; 2x12 with less `gai
 
 ## Related
 
-`tool-guitar`, `role-lead-guitar`, `craft-stereo-width`, `tool-saturation-amp-width`
+`tool-guitar`, `tool-guitar-rig`, `role-lead-guitar`, `craft-stereo-width`, `tool-saturation-amp-width`

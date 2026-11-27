@@ -29,7 +29,7 @@ The `mods` matrix in `set_synth`: amount −1…1 is a share of the target's ran
 | Fat analog bass | Ladder bass (Ladder); resonance no higher than 8 |
 | Talking bass | Talking bass (Formant); lfo2 → fVowel 0.6–0.8 at 1/8–1/4 |
 | Plucked string, metal | Comb pluck (Comb, `keytrack` 1, `cutoff` 261.63); resonance sets the ring length |
-| Phaser pad | Notch pad (SVF Notch, a free slow LFO on the filter); `f2Model` HP 150 Hz |
+| Phaser pad | Notch pad (SVF Notch, a free slow LFO on the filter); `f2Model` HP 150 Hz; or a phaser effect on the channel (tool-modulation-fx) |
 | Two filters | `f2Model`; `fRoute` 0 in series (band), 1 in parallel |
 | Fast sweep without steps | any model except Classic |
 
@@ -44,7 +44,7 @@ Preset candidates: the genre guides. This section says what to turn.
 | Acid | Brightness, Resonance, Grit | Legato: a long note slides into the next; velocity → envAmt accents are already in the preset |
 | Dubstep | Position or Vowel, Grit | lfo2 at 1/8 or 1/16; speed via `set_automation` on `l2Sync` in time |
 | House, garage | Position, Brightness | short notes between the kicks |
-| Synthwave | Brightness, Width | bass in eighths; there is no chorus, Width gives the width; Hall bus with `color` 1980s, gated reverb on the snare |
+| Synthwave | Brightness, Width | bass in eighths; Width gives the width, a chorus ("80s synth pad") adds the 1980s motion; Hall bus with `color` 1980s, gated reverb on the snare |
 | Funk | Snap, Resonance | Legato slides in Rubber bass |
 | Trance | Width, Brightness | delay 1/8D in the chain; open toward the drop with the Brightness macro (its slot m1–m4 from `get_synth`) |
 | Future bass | Motion, Width | duck from the kick on the chords |

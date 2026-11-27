@@ -7,7 +7,7 @@ description: Pads and choirs: slow envelopes, movement, width and a low cut, out
 
 | Role | What makes the sound your own | Sign |
 |---|---|---|
-| Pad | slow LFO on pos or cutoff, unison and `width`, attack 300 ms+; a pad or choir carrying the hook needs an attack shorter than the notes (50–150 ms), or short notes do not sound | small crest, moderate lowMid share (otherwise mud) |
+| Pad | slow LFO on pos or cutoff, unison and `width`, a chorus ("80s synth pad", "Ensemble strings") or phaser "Ambient", attack 300 ms+; a pad or choir carrying the hook needs an attack shorter than the notes (50–150 ms), or short notes do not sound | small crest, moderate lowMid share (otherwise mud) |
 
 ## Voices
 
@@ -15,4 +15,4 @@ A pad with a release over 1 s steals voices when chords change: `render_preview`
 
 ## Related
 
-`tool-synth-modulation`, `craft-stereo-width`, `craft-frequency-slots`
+`tool-synth-modulation`, `tool-modulation-fx`, `craft-stereo-width`, `craft-frequency-slots`

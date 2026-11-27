@@ -99,7 +99,7 @@ Four-on-the-floor dance music: deep house (warm 7th chords, a soft legato bass) 
 ## Engine limits for this genre
 
 - Vocal chops need the user's audio (tool-sampler); without it, use Pad Vowel pad or Choir pad.
-- No chorus on organ and keys: synth unison and `width` (craft-engine-limits).
+- Organ and keys: a phaser (Funk, Phase 90 style) or a chorus (Juno I) at `mix` 0.3–0.5; a flanger sweep on the drum bus in a build (tool-modulation-fx).
 
 ## Related
 

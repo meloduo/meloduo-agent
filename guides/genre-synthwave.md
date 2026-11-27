@@ -67,7 +67,7 @@ Role guides: role-mid-bass, role-pad, role-lead, role-pluck-arp, role-snare-clap
 
 | Genre | Signature | How |
 |---|---|---|
-| Synthwave | big reverb, width | Hall 3–5 s on pads and lead, a big snare reverb, `width` 130–150 % on pads with unison, delay 1/8D on arps |
+| Synthwave | big reverb, width | Hall 3–5 s on pads and lead, a big snare reverb, `width` 130–150 % on pads with unison, chorus "80s synth pad" on the pad, delay 1/8D on arps |
 
 - Gated snare: a reverb bus with `gate` On, `color` 1980s (craft-engine-limits has the numbers).
 - `duck` on the bass and the pads from the kick, deep: 8–15 dB on the bass gives the pulse.
@@ -91,7 +91,7 @@ Role guides: role-mid-bass, role-pad, role-lead, role-pluck-arp, role-snare-clap
 
 ## Engine limits for this genre
 
-- No chorus plugin: synth unison, `width` and the Width macro stand in (craft-engine-limits).
+- Chorus on pads and arps: "80s synth pad" or "Ensemble strings" (tool-modulation-fx); a synth with heavy unison gets "Subtle widen" or none.
 - No tape plugin: sat Tube, High cut and a light pitch LFO.
 - No vocals: a lead or a vocoder-like Vowel pad carries the topline (role-vocal-substitute).
 

@@ -57,7 +57,7 @@ Role guides: role-pad, role-sub-bass (a soft, quiet sub), role-keys.
 - `freeze` on a reverb bus holds a chord as a drone under the next one.
 - Delay on bells with high `feedback` (0.5–0.7) and a dark `tone`; stack delay into reverb on slow parts.
 - `lowcut` on reverb returns at 200–400 Hz so the low mids stay clean.
-- Wide pads: unison and `width`; keep the sub mono and soft.
+- Wide pads: unison and `width`, or a phaser "Ambient" or chorus "Shoegaze wash" at `mix` 0.3–0.5 (tool-modulation-fx); keep the sub mono and soft.
 - Slow automation everywhere: cutoff, `pos`, macros over 8–32 bars (tool-automation).
 - Light master: −14 LUFS is still the target, reached with gentle limiting. Do not squash the dynamics.
 

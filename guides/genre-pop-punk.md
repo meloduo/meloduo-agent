@@ -95,7 +95,7 @@ Role guides: role-rhythm-guitar, role-lead-guitar, role-bass-guitar, role-kick, 
 ## Engine limits for this genre
 
 - No vocals: the hook goes to a lead guitar or a synth lead playing the vocal melody (role-vocal-substitute).
-- No noise gate on the guitar: write clean note ends and rests instead.
+- Tidy the guitar with the gate Soft (rig Punk) and write clean note ends and rests.
 
 The rock tempo and drum row is an estimate, not from sources.
 

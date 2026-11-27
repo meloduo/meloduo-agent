@@ -76,7 +76,7 @@ Contemporary R&B: intimate, lush chords, a slow groove, the voice on top. The vo
 ## Engine limits for this genre
 
 - No singing and no vocal harmonies: the user's vocal audio (tool-sampler) or, with consent, an instrumental topline.
-- No chorus on keys and pads: synth unison, the Width macro and `width` (craft-engine-limits).
+- Keys and pads: a chorus (Juno I or II at `mix` 0.4–0.5, "Subtle widen") or a phaser on the Rhodes (tool-modulation-fx).
 
 ## Related
 

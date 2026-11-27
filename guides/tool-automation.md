@@ -5,7 +5,7 @@ description: Automation lanes: owners, what can and cannot be automated, sharp r
 
 # Automation
 
-Automatable (`set_automation`): volume and pan of channels and buses, and every number parameter of a plugin except the ones listed below: EQ bands (`b{n}Freq`, `b{n}Gain`, `b{n}Q`) and `output`, comp `threshold`, `ratio`, `attack`, `release`, `range`, `makeup`, `drive`, `scLowCut`, `mix` and the rest, sat, delay, width and amp numbers, limiter `gain` and `release`, reverb `decay`, `size`, `predelay`, `early`, `diffusion`, `width`, `damp`, `lowcut`, `ducking`, `gateThreshold`, `gateRelease` and `mix`; synth parameters and macros; 808 `glide`, `drive`, `presence` and `tone`.
+Automatable (`set_automation`): volume and pan of channels and buses, and every number parameter of a plugin except the ones listed below: EQ bands (`b{n}Freq`, `b{n}Gain`, `b{n}Q`) and `output`, comp `threshold`, `ratio`, `attack`, `release`, `range`, `makeup`, `drive`, `scLowCut`, `mix` and the rest, sat, delay, width and amp numbers, chorus, flanger and phaser numbers (`rate`, `depth`, `feedback`, `mix`; not `mode`, `voices`, `stages`, `through`, `sync`: tool-modulation-fx), limiter `gain` and `release`, reverb `decay`, `size`, `predelay`, `early`, `diffusion`, `width`, `damp`, `lowcut`, `ducking`, `gateThreshold`, `gateRelease` and `mix`; synth parameters and macros; 808 `glide`, `drive`, `presence` and `tone`.
 
 Not automatable: sends, all `duck` parameters, comp `lookahead`, limiter `ceiling`, reverb `decayEq` and `postEq` bands, reverb `decay` in Classic mode, choice parameters (`style`, `mode`, `sync`, `shape`, `pingpong`, `gate`, `freeze`, `color`, `character`), drums, guitar and the sampler. Lanes are linear (frequencies follow an exponential curve) and play only in Song mode.
 
@@ -20,4 +20,4 @@ Drum, guitar and sampler parameters cannot be automated, but the plugins on thei
 
 ## Related
 
-`craft-transitions`, `stage-fx-movement`, `tool-synth-modulation`
+`craft-transitions`, `stage-fx-movement`, `tool-synth-modulation`, `tool-modulation-fx`

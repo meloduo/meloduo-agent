@@ -1,28 +1,25 @@
 ---
 name: craft-engine-limits
-description: What Meloduo cannot do and the honest substitutes: vocals, audio import by the agent, chorus, tape, gates outside the synth, time stretch.
+description: What Meloduo cannot do and the honest substitutes: vocals, audio import by the agent, tape, gates outside the synth, time stretch.
 ---
 
 # Engine limits and substitutes
 
-Available: eq, comp, duck, limit, sat (Soft, Tube, Hard), amp, width, reverb, delay, the user's web plugins.
+Available: eq, comp, duck, limit, sat (Soft, Tube, Hard), gate, drive (Boost, Screamer, Dist, Fuzz) and amp for guitar (tool-guitar-rig), width, reverb, delay, chorus, flanger, phaser (tool-modulation-fx), the user's web plugins.
 
-Not in Meloduo: chorus, phaser, flanger, a gate plugin, bitcrusher, tape. An LFO filter and tremolo exist only inside the synth (lfo → cutoff, lfo → amp); a guitar, sampler or drum channel has no LFO. Substitutes:
-- chorus: synth unison and `width`, the Width macro;
-- phaser: the Notch pad preset;
+Not in Meloduo: bitcrusher, tape. An LFO filter and tremolo exist only inside the synth (lfo → cutoff, lfo → amp); a guitar, sampler or drum channel has no LFO. Substitutes:
 - trance gate: lfo2 → amp in the synth;
 - gated reverb: the reverb's own `gate` (see the Gate bus below);
 - autopan: a `pan` lane with points on every beat;
 - lo-fi: sat Tube, EQ High cut 6–10 kHz, `warp` Quantize in the synth.
 
 - Drum and sampler parameters cannot be automated; synth pitch moves only through the matrix (`mods` → pitch) and Legato notes, not through a lane.
-- There is no chorus, gate plugin, bitcrusher, tape or reverse. Gated reverb exists: the reverb's own `gate`. Substitutes: the table below.
+- There is no bitcrusher, tape or reverse. Gated reverb exists: the reverb's own `gate`. Substitutes: the table below.
 - The 808 is a separate instrument (`voice` "808", `set_808`, `get_808`), not the synth: guides role-808 and tool-808.
 
 | Missing | Substitute |
 |---|---|
-| chorus | synth unison, `width`, the Width macro; a double with another timbre |
-| gate on a channel | lfo2 → amp on the synth; no gate for guitar, sampler or drums |
+| gate on a channel | not missing: the `gate` plugin (tool-guitar-rig); a trance gate is lfo2 → amp on the synth |
 | gated reverb | not missing: reverb `gate` On, `gateThreshold` −40…−30 dB, `gateRelease` 150–300 ms on a Plate or Hall bus, snare sent at −10…−6 dB |
 | bitcrusher | `warp` Quantize on the synth; sat Hard and High cut |
 | tape, wow | LFO → pitch, fast and light; sat Tube; High cut 6–10 kHz |
@@ -43,4 +40,4 @@ Not in Meloduo: chorus, phaser, flanger, a gate plugin, bitcrusher, tape. An LFO
 
 ## Related
 
-`role-vocal-substitute`, `tool-sampler`, `tool-automation`
+`role-vocal-substitute`, `tool-sampler`, `tool-automation`, `tool-modulation-fx`

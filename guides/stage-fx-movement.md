@@ -30,10 +30,10 @@ No more than four inserts per channel. Correction numbers (EQ, comp): craft-gain
 | Hats, percussion | eq | Echo 1/16 quietly, pingpong on percussion | lo-fi: sat Tube |
 | Bass | eq → comp El-Op → duck from the kick → sat on the mids if the bass must read on a phone | none | house: duck release 1/8–1/4 |
 | 808 | its own `drive` and `presence` in `set_808`; no `sat` needed on the channel | none | separate it from the kick with notes and duck |
-| Pad, chords | eq → comp Smooth or none → width 110–140 % (needs unison) → duck 3–6 dB (EDM) | Hall | lo-fi: sat Tube and High cut 6–10 kHz |
+| Pad, chords | eq → comp Smooth or none → chorus or width 110–140 % (width needs a stereo source) → duck 3–6 dB (EDM) | Hall | lo-fi: sat Tube and High cut 6–10 kHz |
 | Lead, hook | eq → comp Vocal or Opto → light sat Soft → delay 1/8D or 1/4 with a low `mix` | Hall, Echo, Throw | trance: 1/8D is already in the presets |
 | Pluck, arp | eq → delay 1/8D or 1/16 pingpong, feedback 0.3–0.45 | Hall | EDM: duck 3–6 dB |
-| Guitar | amp → eq → comp Classic 2–4 dB | Room, slapback delay 1/8T | rock: a double instead of `width` |
+| Guitar | amp → eq → comp Classic 2–4 dB → chorus, phaser or flanger if the style has one (tool-modulation-fx) | Room, slapback delay 1/8T | rock: a double instead of `width` |
 | Drum bus | comp Bus 2–3 dB → sat Tube with a low `mix` | — | parallel compression: comp `mix` 30–50 % |
 
 ## Genre signatures
