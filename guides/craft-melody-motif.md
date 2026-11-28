@@ -59,7 +59,7 @@ Transpose by scale degrees, not semitones, so the notes stay in the mode. An oct
 
 ## Melody, chords and bass
 
-- On strong beats (steps 0 and 8; in syncopated genres, on the accents), a tone of the chord playing at that moment.
+- On strong beats (steps 0 and 8 in 4/4; the bar line and, in even meters, the middle of the bar; in syncopated genres, on the accents), a tone of the chord playing at that moment.
 - Between them, neighbouring degrees of the mode: passing and neighbour notes.
 - A long note a semitone above a chord tone grinds. Do not hold it.
 - The melody centres on 5 or on 1, not both at once. In pop-rock b7 is more common than 7.

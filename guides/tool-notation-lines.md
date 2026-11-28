@@ -5,7 +5,7 @@ description: Write and read parts as text lines: grid, degrees, chords, Euclidea
 
 # Note lines
 
-Steps count from 0: 16 per bar, 0 is beat one, 4 beat two, 8 beat three, 12 beat four. MIDI: C4 = 60.
+Steps count from 0. In 4/4 a bar has 16: 0 is beat one, 4 beat two, 8 beat three, 12 beat four. In another signature `get_project_state` gives `stepsPerBar` (12 in 3/4 and in 6/8, where the two pulses are steps 0 and 6); a `|` must fall on that bar line. MIDI: C4 = 60.
 
 - The grid is `grid`: `x... x... x... x...`, accent `X`, ghost `g`, velocity as digits 1–9. Rolls use `unit` 1/32.
 

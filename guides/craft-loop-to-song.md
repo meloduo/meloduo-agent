@@ -20,7 +20,7 @@ The project has a loop of 4–8 bars and the user wants a song from it: "turn th
 
 1. **Read the loop.** `get_project_state`; tempo, key and genre from `info`. If one pattern holds several parts, split it first: `split_pattern` with `groups` (tool-patterns-clips).
 2. **Complete the loop** to a full main section: which roles does the genre still lack (stage-full-drop)? Add them as separate patterns. Ask before replacing any part of the user's loop.
-3. **Form.** Pick a template by genre and length (stage-form): streaming 3–3.5 min or club 5–6 min. Seconds = bars × 240 / BPM. Show the layer table (sections × tracks) to the user in a few lines.
+3. **Form.** Pick a template by genre and length (stage-form): streaming 3–3.5 min or club 5–6 min. Seconds = bars × 240 / BPM in 4/4. Show the layer table (sections × tracks) to the user in a few lines.
 4. **Lay it out.** `add_markers` for all sections, then `place_patterns` with every clip in one call, the full loop in every section.
 5. **Subtract.** `remove_clip` (or `edit_clips` `remove`; `muted` first if you want to compare) per the layer table: intro and breakdown sparse, verse lighter than chorus, the last chorus or drop the fullest (craft-section-contrast).
 6. **Vary.** A-end variants of repeated parts, a new hat pattern or bass variant in the repeat (craft-pattern-variation).

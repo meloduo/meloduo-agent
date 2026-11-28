@@ -53,7 +53,7 @@ const INSTRUCTIONS = [
   "- Every edit tool takes why: one short sentence for the user, in the user's language, with the reason, not the arguments (\"bass an octave down so it does not fight the kick\").",
   '- A call is all or nothing. The user can undo your whole turn with the Undo turn button; Ctrl+Z undoes one call.',
   '- If someone changed the project since your last call, the result has changedSinceYourLastCall. Keep those edits. An edit after such changes is rejected once with the list (STALE_EDIT); retry it if it still makes sense.',
-  '- Units: a step is a 1/16 note, 16 per bar, counted from 0 inside a pattern. Bars count from 0; a range fromBar…toBar includes fromBar and excludes toBar. pitch is MIDI (60 = C4). Levels are in dB.',
+  '- Units: a step is a 1/16 note, counted from 0 inside a pattern; a bar has 16 in 4/4, else stepsPerBar of get_project_state. Bars count from 0; a range fromBar…toBar includes fromBar and excludes toBar. pitch is MIDI (60 = C4). Levels are in dB.',
   '- A choice parameter takes its option name or its number: "1/16", "Ladder".',
   '- Descriptions are short. Ranges, options, presets and notes come from get_synth, get_drum, get_808, get_effect and get_web_plugin. An error names the allowed values and the next step.',
   '- You cannot hear the audio. render_preview returns loudness, spectrum and warnings: decide by them, edit, render again.',

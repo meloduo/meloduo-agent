@@ -32,7 +32,7 @@ Not in Meloduo: bitcrusher, tape. An LFO filter and tremolo exist only inside th
 - No time stretch or pitch shift of audio: the project tempo must match the file; a sampler note other than `root` changes pitch and speed together.
 - No multiband compressor, multiband saturation or clipper: a parallel crush bus (tool-saturation-amp-width), dynamic EQ bands, sat Hard and the limiter.
 - Swing works on 16ths only, with no groove templates: shift off-beat eighths with `+Nt` (craft-groove-swing).
-- No tempo map, time signature or key changes by section: odd groupings are written in 4/4; a key change is transposed notes.
+- One tempo, one time signature and one key per project; none changes by section. The signature is 2/4…12/4 or 2/8…12/8 (`set_tempo` `timeSignature`, before the notes): a passing odd bar is written as a grouping across bar lines, a key change is transposed notes. LFO and effect divisions named in bars ("1 bar" … "8 bars") count 4 quarters per bar in every signature.
 - No reverse audio: a synth with a long attack cut on the beat, or a rising volume lane.
 - No automation of sends, `duck`, drums, guitar, sampler or `arp*`: plugins on the channel, a Throw bus, a second channel (tool-automation).
 - `render_preview` metrics are no shorter than a bar: duck depth on each hit, attack shape and riser movement are checked by parameters, not by sound. Say so in the report.

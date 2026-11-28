@@ -38,7 +38,7 @@ Use it for drum and bass, liquid, neuro and jump-up: a fast two-step break over 
 ## Form
 
 - DJ form: Intro 32 (drums and atmosphere, easy to mix), Drop 32, Breakdown 16–32, Build 8, Drop 2 32, Outro 32.
-- Streaming form: Intro 8–16, Drop 32, Breakdown 16, Drop 32, Outro 8. Seconds = bars × 240 / BPM, so 32 bars at 174 is about 44 s.
+- Streaming form: Intro 8–16, Drop 32, Breakdown 16, Drop 32, Outro 8. Seconds = bars × 240 / BPM in 4/4, so 32 bars at 174 is about 44 s.
 - The second drop differs from the first: a new bass edit, a new break chop or a counter line (stage-form).
 
 ## Palette

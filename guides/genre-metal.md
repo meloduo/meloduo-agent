@@ -89,7 +89,7 @@ In metal and heavy rock a tight wall matters more than anything else:
 
 - Tightness: the rig Metal (gate Tight, drive Tighten, amp Modern metal; tool-guitar-rig), and writing: end chug notes short, leave real rests.
 - No 7- or 8-string range: use `set_main_pitch` (the wall above).
-- No time signature change: write odd groupings in 4/4 (craft-engine-limits).
+- One time signature for the whole song (`set_tempo` `timeSignature`, 7/8 included): write a passing odd bar as a grouping across bar lines (craft-engine-limits).
 
 ## Related
 

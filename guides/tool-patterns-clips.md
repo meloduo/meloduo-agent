@@ -8,7 +8,7 @@ description: Patterns and playlist clips: one part per pattern, split, clone, sw
 ## Rules
 
 - One part, one pattern: `add_pattern` with `patterns` creates them all in one call. A "whole section" pattern cannot be thinned out with clips; `split_pattern` with `groups` repairs it.
-- `place_patterns` places many clips in one call (`clips`: patternId, trackId, bar, bars, fromBar). `place_pattern` places one. `bar`, `bars` and `fromBar` take fractional bars (4.25 = bar 4, step 4), so a clip can start or end off the bar line.
+- `place_patterns` places many clips in one call (`clips`: patternId, trackId, bar, bars, fromBar). `place_pattern` places one. `bar`, `bars` and `fromBar` take fractional bars (4.25 = a quarter into bar 4, step 4 in 4/4), so a clip can start or end off the bar line.
 - `set_pattern_length` 1–64 bars.
 - **One clip, one phrase.** A clip's `bars` can loop a short pattern for a long stretch, but do not do it: a 1-bar kick stretched over 31 bars reads as one block for the whole track, and the user cannot see or edit the phrases. Make the pattern a full phrase (usually 4 bars, 8 for long melodic lines) and place one clip per phrase, so the playlist shows the form: as a guideline, clip `bars` equals the pattern length, usually 4–8. The same `place_patterns` call takes all the clips.
 

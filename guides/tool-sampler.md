@@ -12,7 +12,7 @@ description: Use the user's imported audio: sampler channels, slices by start an
 - `place_audio`: `sampleId`, `trackId`, `bar`, `bars` (default: the whole file at the project tempo), `offset` (seconds into the file), `gainDb`, `fadeInBars`, `fadeOutBars`, `crossfade`, `reverse`, `channelId` (a sampler channel; without it the tool uses or makes one).
 - `set_sampler`: `sampleId`, `root` (the MIDI note at which the file plays as recorded), `tune`, `start` and `end` (0–1 of the file), `mode` One-shot or Gate, `loop`, `attack`, `release`, `gain`.
 - `edit_clips` moves, resizes, mutes and re-gains audio clips (`bar`, `bars`, `muted`, `offset`, `gainDb`, fades, `crossfade`, `reverse`); `bar` and `bars` take fractional bars. `split` `[{id, bar}]` cuts an audio clip; the right half goes on in the file, the fade in stays left and the fade out right.
-- Fades are in bars (0.0625 = one step, 0.25 = one beat) and cut to the clip length. A clip that starts or ends inside the file's sound needs a short one.
+- Fades are in bars (in 4/4, 0.0625 = one step and 0.25 = one beat) and cut to the clip length. A clip that starts or ends inside the file's sound needs a short one.
 - Crossfade: two audio clips on one track, the second starting exactly where the first ends; set `crossfade: true` and `fadeInBars` (its length) on the second. The first plays on into its file, so it needs file left after its end: the reply's `warnings` say when it does not. Overlapping clips are rejected.
 - `reverse: true` plays the same piece of the file backwards; `offset` then counts from the end of the file. A clip longer than the sound left in the file is cut to the sound when you reverse it.
 - There is no time stretch: a file plays at its own tempo. Set the project tempo to the file's tempo before you build around it, and say so.
@@ -25,7 +25,7 @@ description: Use the user's imported audio: sampler channels, slices by start an
 3. **A loop (boom bap, lo-fi):** `start`/`end` on 1–2 bars, `loop` On, or `place_audio` with `bars`. Producers usually take the low end and some top out of a sample: eq Low cut about 150 Hz, High cut 8–10 kHz, `duck` from the kick.
 4. **A reference track for comparison:** on its own sampler channel, `muted`, one section long (tool-match-eq).
 5. **A wavetable from a sample:** tool-wavetable.
-6. **Reverse cymbal into a drop:** `place_audio` with `reverse`, at `bar` = drop − file `seconds` / (240 / bpm), so it ends on the drop.
+6. **Reverse cymbal into a drop:** `place_audio` with `reverse`, at `bar` = drop − file `seconds` / (stepsPerBar × 15 / bpm), so it ends on the drop.
 
 ## Related
 

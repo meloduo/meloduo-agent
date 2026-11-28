@@ -60,7 +60,7 @@ The strongest transition goes on the biggest boundary. A long stretch with no ch
 | Cold start | Drop 8 (no intro), Verse 16, Build 8, Drop 16, Breakdown 8, Drop 16, Outro 4 | 76 | pop, trap, short formats |
 | Two parts | Part A (Intro, Groove, Drop) 48, part B in another mode or at half tempo 32, return to A 16 | 96 | synthwave, ambient, experimental |
 
-For a short request ("sketch a track"), any template with 8-bar sections, about 64 bars. Length: seconds = bars × 240 / BPM.
+For a short request ("sketch a track"), any template with 8-bar sections, about 64 bars. Length: seconds = bars × 240 / BPM in 4/4 (in another signature, bars × stepsPerBar × 15 / BPM).
 
 ## Questions: is the arrangement too thin?
 
