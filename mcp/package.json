@@ -1,6 +1,7 @@
 {
   "name": "@meloduo/mcp",
-  "version": "0.3.0",
+  "version": "0.3.1",
+  "mcpName": "io.github.meloduo/meloduo",
   "description": "MCP bridge for Meloduo, a browser DAW: lets any MCP client edit the project open in your browser tab.",
   "keywords": [
     "mcp",

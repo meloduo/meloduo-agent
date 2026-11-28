@@ -8,6 +8,7 @@ Changes of the `@meloduo/mcp` bridge, the guides and the skills. The tool list c
 - Guides for audio clip fades, crossfades and reverse, batch calls, note slides, loudness matching and microphone recording by the user.
 - Guides use the new preset, mode and style names.
 - The development bridge waits for calls in flight before it restarts.
+- `mcpName` and `mcp/server.json` for the MCP Registry.
 
 ## 0.3.0 (2026-11-28)
 
