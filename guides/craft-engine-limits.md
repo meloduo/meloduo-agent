@@ -28,7 +28,7 @@ Not in Meloduo: bitcrusher, tape. An LFO filter and tremolo exist only inside th
 
 ## Other gaps and honest workarounds
 
-- No vocals and no recording: the user's imported audio is the only voice (role-vocal-substitute).
+- No generated vocals, and you cannot record: the only voice is the user's own audio, imported or recorded from their microphone (Options > Record from the microphone, in Song mode) (role-vocal-substitute).
 - No time stretch or pitch shift of audio: the project tempo must match the file; a sampler note other than `root` changes pitch and speed together.
 - No multiband compressor, multiband saturation or clipper: a parallel crush bus (tool-saturation-amp-width), dynamic EQ bands, sat Hard and the limiter.
 - Swing works on 16ths only, with no groove templates: shift off-beat eighths with `+Nt` (craft-groove-swing).

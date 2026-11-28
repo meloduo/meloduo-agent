@@ -11,7 +11,7 @@ Vocals later: a 2–3 dB cut at 1–4 kHz on chords and pads.
 
 ## Practices
 
-- In pop, R&B, rap and reggaeton the voice is the core of the track. Meloduo cannot sing, rap or record: say so before you start.
+- In pop, R&B, rap and reggaeton the voice is the core of the track. Meloduo cannot sing or rap, and you cannot record: say so before you start. The user can record their own voice (Options > Record from the microphone, then Record in Song mode).
 - The honest options, in order: the user's own vocal audio (tool-sampler); room for a vocal added later (a sparser chorus, a cut at 1–4 kHz on chords and pads); an instrumental topline whose carrier fits the genre (stage-track-card).
 - Do not imitate a voice with a synth "vocal" without the user's consent: it replaces the core with a toy.
 

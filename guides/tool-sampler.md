@@ -7,7 +7,7 @@ description: Use the user's imported audio: sampler channels, slices by start an
 
 ## What exists
 
-- The user imports audio (File > Import audio, or drag and drop). You cannot import, but you can place and cut what they imported. Ask early: "Do you have a vocal, a loop or a one-shot? Import it and I will place it."
+- The user imports audio (File > Import audio, or drag and drop) or records it (Options > Record from the microphone, then Record in Song mode: it lands as an audio clip). You cannot import or record, but you can place and cut what they gave. Ask early: "Do you have a vocal, a loop or a one-shot? Import it and I will place it."
 - `get_project_state` lists `samples` (`id`, `name`, `seconds`, `channels`) and audio clips.
 - `place_audio`: `sampleId`, `trackId`, `bar`, `bars` (default: the whole file at the project tempo), `offset` (seconds into the file), `gainDb`, `fadeInBars`, `fadeOutBars`, `crossfade`, `reverse`, `channelId` (a sampler channel; without it the tool uses or makes one).
 - `set_sampler`: `sampleId`, `root` (the MIDI note at which the file plays as recorded), `tune`, `start` and `end` (0–1 of the file), `mode` One-shot or Gate, `loop`, `attack`, `release`, `gain`.
