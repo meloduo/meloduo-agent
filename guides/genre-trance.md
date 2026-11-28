@@ -92,7 +92,7 @@ Snare builds double their rate every 1–2 bars: quarters, eighths, 16ths, then 
 
 ## Engine limits
 
-No tempo map: the whole track stays at one BPM. Chorus, flanger and phaser exist (tool-modulation-fx), but supersaws already have width: use "Subtle widen" or none. A flanger or phaser sweep suits risers and the build. More limits: `craft-engine-limits`.
+Trance keeps one BPM: no tempo lane. Chorus, flanger and phaser exist (tool-modulation-fx), but supersaws already have width: use "Subtle widen" or none. A flanger or phaser sweep suits risers and the build. More limits: `craft-engine-limits`.
 
 ## Related
 

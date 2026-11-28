@@ -78,7 +78,7 @@ Mallet toms stand in for big drums and timpani. Velocity changes their tone: wri
 
 ## Engine limits
 
-No orchestra samples, no choir voice, no tempo map or time signature changes (one signature per project, `set_tempo` `timeSignature`). Use synth presets as stand-ins and say so; the user can import real recordings. Details: `craft-engine-limits`.
+No orchestra samples, no choir voice, no time signature changes (one signature per project, `set_tempo` `timeSignature`; tempo changes are possible, tool-automation). Use synth presets as stand-ins and say so; the user can import real recordings. Details: `craft-engine-limits`.
 
 ## Related
 

@@ -50,7 +50,7 @@ Make 2–3 versions that differ by one decision: the new chords, the tempo feel 
 
 ## Engine limits
 
-No time stretch and no tempo map: audio stays at its own speed, and the whole project has one tempo. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
+No time stretch: audio stays at its own speed under any tempo. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
 
 ## Related
 
