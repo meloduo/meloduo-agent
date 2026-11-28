@@ -78,6 +78,7 @@ const BRIDGE_TOOLS = [
 
 type Reply = { id: number; result?: unknown; error?: string };
 let nextCall = 1;
+let running = 0;
 let nextSession = 1;
 const BOOT = Date.now().toString(36);
 
@@ -87,6 +88,7 @@ function callTab(tool: string, args: unknown, session: number, signal: AbortSign
   if (!ws) return Promise.reject(new Error('No Meloduo tab is open. Ask the user to open Meloduo in the browser, then retry.'));
   const id = nextCall++;
   return new Promise((resolve, reject) => {
+    running++;
     // The tab must drop the call, or the render goes on, a retry starts a second one and the tab swells.
     const timer = setTimeout(() => done(() => (ws.send(JSON.stringify({ type: 'cancel', id })), reject(new Error('Tab did not answer in time. The call was cancelled: retry it with fromBar and toBar (a part of the song), stems false and no spectrum to make it faster.')))), timeoutOf(tool));
     const onMessage = (raw: Buffer) => {
@@ -103,6 +105,7 @@ function callTab(tool: string, args: unknown, session: number, signal: AbortSign
     const onClose = () => done(() => reject(new Error('The DAW tab closed during the call. Open the tab and call get_project_state before retrying.')));
     const onAbort = () => done(() => (ws.send(JSON.stringify({ type: 'cancel', id })), reject(new Error('Cancelled by the client.'))));
     const done = (finish: () => void) => {
+      running--;
       clearTimeout(timer);
       ws.off('message', onMessage);
       ws.off('close', onClose);
@@ -251,7 +254,9 @@ if (!process.env.MELODUO_NO_WATCH && import.meta.url.endsWith('.ts')) {
   watch(fileURLToPath(new URL('.', import.meta.url)), { recursive: true }, (_e, file) => {
     if (!file || !/\.ts$/.test(file) || /\.test\.ts$|smoke\.ts$|check-guides\.ts$/.test(file)) return;
     clearTimeout(timer);
-    timer = setTimeout(() => (log(`${file} changed, restarting`), process.exit(0)), 400);
+    // A restart fails the calls in flight (a match_loudness takes minutes): wait for them.
+    const restart = () => (running ? (timer = setTimeout(restart, 1000)) : (log(`${file} changed, restarting`), process.exit(0)));
+    timer = setTimeout(restart, 400);
   });
 }
 

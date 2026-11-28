@@ -7,7 +7,7 @@ description: Synth basics: presets and macros, voice modes, glide, unison per os
 
 ## How to set a sound
 
-1. `add_channel` synth (guitar, drum) with `preset`. It sets the parameters, the matrix, the macro names and the plugin chain in one edit. `set_synth` with a preset adds the same chain only when the channel has no plugins yet (result `chainAdded`); otherwise your plugins stay and a `hint` lists what the preset lacks. Presets are matched in loudness.
+1. `add_channel` synth (guitar, drum) with `preset`. It sets the parameters, the matrix, the macro names and the plugin chain in one edit. `set_synth` with a preset adds the same chain only when the channel has no plugins yet (result `chainAdded`); otherwise your plugins stay and a `hint` lists what the preset lacks. Presets are matched in loudness. `chain: false` leaves the preset plugins out (when the track has its own buses).
 2. Macros: `set_synth` `macros` by name. 0 is as designed, 1 is all the way toward the name, −1 the opposite way (Brightness −0.5 is darker than the preset). Set them by mood rather than leaving them at 0.
 3. Parameter edits come after the macros. All parameters and ranges: `get_synth`.
 4. Write a choice parameter by name: `"arpRate":"1/16"`, `"lfoSync":"1/8"`, for delay `"sync":"1/8D"`. A macro can be named in `set_automation` (`"param":"Brightness"`).

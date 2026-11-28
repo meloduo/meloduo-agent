@@ -42,7 +42,9 @@ Three examples, three different characters. Do not copy them: they show the form
 | line | `C4`, `C4+E4+G4`, `A2m`, `C3maj/E2`, `1`–`7`, `5'`, `1,` | note, chord, letter chord, slash chord, scale degree, octave up, octave down |
 | line | `:N`, `!`, `!N` | length in units, accent 127, velocity N |
 | line | `+Nt`, `-Nt` | shift by N ticks without moving the cursor; 24 ticks per 16th; line only |
-| line | `{…}x4`, `{…}in2`, `{…}in2x4` | repeat, squeeze into 2 units (triplets), both; up to 4 levels; **not in `grid`**: for a repeated drum bar write a one-bar pattern and place it several times (`place_patterns`), or a drum part as `line` with pitches |
+| line | `{…}x4`, `{…}in2`, `{…}in2x4` | repeat, squeeze into 2 units (triplets), both; up to 4 levels |
+| grid | `{…}xN` | repeat a part of the grid, N 1–64: `{x... x..x}x4`; `in2` is for `line` only |
+| line | `~` | slide: the note lasts a 1/32 past its slot and overlaps the next (808 glide, Legato synth, 303); not on the last note of the pattern |
 | line | `↓` `↑` | guitar strum direction, guitar channels only |
 | both | `|` | bar check |
 
@@ -55,6 +57,8 @@ Three examples, three different characters. Do not copy them: they show the form
 - Laid-back or pushed notes: `+Nt` / `-Nt` in a `line` (craft-groove-swing).
 - Dilla-style hats: `unit` "1/16t".
 - Before you edit a part, read it as text: `get_project_state` with `notation: "degrees"` (or "names") gives each part as lines in this format. Copy a line, edit it and send it back with `add_notes` `replace: true`. It is much shorter than the note list.
+
+- Several patterns in one call: `add_notes` with `patterns` [{patternId, notes or lines}], one undo, all or nothing.
 
 ## Related
 

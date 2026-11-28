@@ -15,7 +15,7 @@ description: The master chain and match_loudness: chain order, windows on long s
 ## match_loudness
 
 `match_loudness`:
-1. It moves the master fader; at +6 dB it raises the limiter `gain` itself (`limiterGainDb`). `moved` says what it changed, from → to, for example "master fader 0 → 3.2 dB, limiter gain 0 → 2.5 dB"; `masterDb` and `limiterGainDb` are the values after. Below the target, it removes `gain` first, then lowers the fader.
+1. It moves the master fader. With a limiter on the master the fader stops at 0 dB and the limiter `gain` goes up (`limiterGainDb`, to 12 dB), then the fader goes on to +6 dB. A master `volume` lane moves as a whole (`masterDb` is its loudest point). `moved` says what it changed, from → to, for example "master fader 0 → 3.2 dB, limiter gain 0 → 2.5 dB"; `masterDb` and `limiterGainDb` are the values after. Below the target, it removes `gain` first, then lowers the fader.
 2. Run it on the whole song if the last full render without stems (`stems: false`) took under 100 seconds. Otherwise use a window of the last drop with a correction: window target = target + (window LUFS − song LUFS), both numbers from one full render with the finished master chain.
 3. If it returns `reached: false` and the fader and limiter are at their limit, raise the channels as a group (`set_mix` `trimDb`) and run it again.
 4. It stops by itself when the limiter stops adding loudness or flattens the sections (`stoppedBecause`). The result gives `loudnessBySection`, `limiterPull` and `changed`: check the shape without an extra render.

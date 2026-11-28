@@ -7,7 +7,7 @@ description: Static balance: trims first, faders from the key element, hook leve
 
 ## Static balance
 
-1. While balancing, keep the master chain empty or the limiter bypassed (`set_effect` with `bypass: true`). Leave the master fader at 0 dB: stage 10 needs it, and `match_loudness` raises it by no more than +6 dB.
+1. While balancing, keep the master chain empty or the limiter bypassed (`set_effect` with `bypass: true`). Leave the master fader at 0 dB: stage 10 needs it for `match_loudness` (it takes the fader to 0 dB, then raises the limiter gain; the fader never passes +6 dB).
 2. `set_mix` in one call: kick and bass first, then the rest. Move the mix peak as a group: `trimDb` on each channel of the group, `allTrimDb` for every channel with notes (empty ones are left alone). Channel `trimDb` in the same call adds to `allTrimDb`: "everything −7, bass +5" is one call.
 3. `render_preview` on the densest section with stems. Stems go through the master fader but not its chain: stem LUFS minus mix LUFS is the part's LU against the mix.
 
