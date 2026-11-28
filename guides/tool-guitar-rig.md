@@ -26,10 +26,10 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 
 ## Drive
 
-- `mode`: Boost (clean gain, tone tilt), Screamer (lows stay tight), Dist (rock, punk, grunge), Fuzz (Muff type: scooped mid, shoegaze).
+- `mode`: Boost (clean gain, tone tilt), Overdrive (lows stay tight), Dist (rock, punk, grunge), Fuzz (Muff type: scooped mid, shoegaze).
 - Params: `drive`, `tone`, `level`, `mix`. Loudness holds while `drive` moves; `level` is the volume knob.
-- Presets: Clean boost, Blues push, Tighten, Rat, Wall fuzz.
-- Orientation: Screamer before the amp, `drive` 0–3, `level` +6 tightens palm mutes; `drive` 8–15 is a blues push. Fuzz with `mix` 0.5 keeps the pick attack.
+- Presets: Clean boost, Blues push, Tighten, Grit, Wall fuzz.
+- Orientation: Overdrive before the amp, `drive` 0–3, `level` +6 tightens palm mutes; `drive` 8–15 is a blues push. Fuzz with `mix` 0.5 keeps the pick attack.
 
 ## Amp
 
@@ -41,7 +41,7 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 - `mic` (Dynamic, Ribbon, Condenser) and `micPos` (0…1) act on cabs 5–9 in every model.
 - Automatable: numbers only. `model`, `cab`, `mic`, `micPos` are not.
 - Amp presets. Old, unchanged: Clean, Funk clean, Crunch, Lead, Chug, Bass grit, Lo-fi box. Genre: Glass clean, Jangle, Edge, Blues edge, Chime edge, Funk glass, Stack crunch, Punk, Grunge, Modern metal, Bass clean 8x10 (the amp of the Post-punk bass rig).
-- High gain: gate first, then a Screamer (low `drive`, `level` up) before the amp, then Modern metal or Lead US. Keep `gain` below 34 on Classic (aliasing).
+- High gain: gate first, then drive in Overdrive mode (low `drive`, `level` up) before the amp, then Modern metal or Lead US. Keep `gain` below 34 on Classic (aliasing).
 
 ## Rigs
 
@@ -58,7 +58,7 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 | Funk | comp Funk squeeze, amp Funk glass, phaser Funk |
 | Classic rock | drive Clean boost, amp Stack crunch, delay Slapback, reverb Classic / Plate |
 | Punk | gate Soft, amp Punk, reverb Classic / Small room |
-| Grunge | drive Rat, amp Grunge, reverb Classic / Small room |
+| Grunge | drive Grit, amp Grunge, reverb Classic / Small room |
 | Metal | gate Tight, drive Tighten, amp Modern metal |
 | Ambient | comp Smooth lead, amp Glass clean, chorus Subtle widen, delay Dub, reverb Hall / Big pad |
 

@@ -11,7 +11,7 @@ Compression: 2–6 dB of gain reduction, attack 10–30 ms on drums and bass. St
 - lead: Vocal or Opto;
 - bass: El-Op;
 - pads: Smooth;
-- master: Mastering or Vari-Mu;
+- master: style Mastering or Tube;
 - pumping: Pumping with the kick as `source`, `release` 30000 / BPM … 60000 / BPM ms;
 - Clean: transparent, the default.
 
@@ -19,7 +19,7 @@ Upward and TTM raise the quiet parts along with the tails: use them only on purp
 
 ## Parameters worth knowing
 
-- 14 styles: Clean, Classic, Opto, Vocal, Mastering, Bus, Punch, Pumping, Versatile, Smooth, Vari-Mu, El-Op, Upward, TTM.
+- 14 styles: Clean, Classic, Opto, Vocal, Mastering, Bus, Punch, Pumping, Versatile, Smooth, Tube, El-Op, Upward, TTM.
 - `scLowCut` (20–2000 Hz) and `scHighCut` filter what the detector hears; `detector` Peak or RMS; `autoRelease`; `hold`; `knee`; `link` and `linkMode` L/R or M/S.
 - `lookahead` 0–20 ms; `character` Off, Tube, Diode, Bright with `drive` 0–100 %; `mix` 0–200 %; `oversample`.
 - `source` (a channel) keys the compressor from another channel's sound.

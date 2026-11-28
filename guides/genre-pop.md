@@ -98,7 +98,7 @@ Pop is usually straight: `swing` 0. A dance-pop groove can borrow the house valu
 ## Engine limits for this genre
 
 - No singing: the user's vocal audio (tool-sampler) or, with consent, an instrumental topline (role-vocal-substitute).
-- Width on leads and pads: a chorus (Juno I, "Subtle widen") and `width`; skip the chorus on a synth with heavy unison (tool-modulation-fx).
+- Width on leads and pads: a chorus (BBD I, "Subtle widen") and `width`; skip the chorus on a synth with heavy unison (tool-modulation-fx).
 
 ## Related
 

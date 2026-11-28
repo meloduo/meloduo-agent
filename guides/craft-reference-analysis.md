@@ -37,7 +37,7 @@ At stage 6 compare the arrangement with the map: every part on the map exists an
 
 ## Timbre targets
 
-For each part with a known source instrument, write the target before choosing a sound: the instrument and era (FM bass, LinnDrum snare, a string machine, a gated snare), the envelope (short pluck or held), the brightness (dark, warm, bright, harsh), the width (mono, wide), and two or three measurable signs on its stem: band shares, `crestDb`, `lowSidePct`, level against the kick in LU. Pick the sound by these signs (meloduo-sound-design), not by the preset name. Name a target the engine cannot reach.
+For each part with a known source instrument, write the target before choosing a sound: the instrument and era (FM bass, 80s drum-machine snare, a string machine, a gated snare), the envelope (short pluck or held), the brightness (dark, warm, bright, harsh), the width (mono, wide), and two or three measurable signs on its stem: band shares, `crestDb`, `lowSidePct`, level against the kick in LU. Pick the sound by these signs (meloduo-sound-design), not by the preset name. Name a target the engine cannot reach.
 
 ## Check closeness without hearing
 

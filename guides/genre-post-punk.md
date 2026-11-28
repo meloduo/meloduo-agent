@@ -41,7 +41,7 @@ Look the song up. A fast song at 80 or 100 BPM does not read as the genre.
 - Use the rig "Post-punk bass" (tool-guitar-rig): bass guitar, comp Bass leveler, amp Clean US with the 8x10 cab, chorus Post-punk bass. Second route: synth "Pulse bass" in straight 8ths.
 - Straight 8ths, root motion with one or two passing notes, one repeated motif of 4–8 notes. MIDI 40–57, one string position (`position` about 7).
 - It is the loudest melodic stem. Check the bass stem in `render_preview`: at least 40% in 60–250 Hz and at least 10% in 500–2000 Hz. Less low end means a wrong pickup or a pedal that cuts lows (role-bass-guitar).
-- Never: a Screamer or other drive pedal on the bass (it removes the lows), a chorus with `mix` over 0.5, a bass under MIDI 36 for the whole song.
+- Never: an Overdrive or other drive pedal on the bass (it removes the lows), a chorus with `mix` over 0.5, a bass under MIDI 36 for the whole song.
 
 ## Guitar and synth
 

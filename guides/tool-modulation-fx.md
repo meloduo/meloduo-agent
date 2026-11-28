@@ -12,9 +12,9 @@ description: The chorus, flanger and phaser mixer effects: parameters, presets b
 ## Chorus
 
 - Params: `mode` Classic, Dimension or Ensemble; `voices` 1–4; `rate`, `depth`, `delay` ms, `feedback` −0.8…0.8, `spread`, `lowcut`, `tone`, `mix`.
-- Presets: Juno I, Juno II, Dimension, Post-punk bass, Post-punk clean guitar, Shoegaze wash, 80s synth pad, Ensemble strings, Subtle widen, Vibrato.
+- Presets: BBD I, BBD II, Dimension, Post-punk bass, Post-punk clean guitar, Shoegaze wash, 80s synth pad, Ensemble strings, Subtle widen, Vibrato.
 - Bass: "Post-punk bass" (Peter Hook style). Keep `lowcut` 120–200 so the lows stay dry and centred. Never chorus a sub-bass or an 808 without `lowcut` (craft-low-end-mono).
-- Clean guitar: "Post-punk clean guitar" (Cure, Joy Division jangle), or Juno I or II at `mix` 0.4–0.5.
+- Clean guitar: "Post-punk clean guitar" (Cure, Joy Division jangle), or BBD I or II at `mix` 0.4–0.5.
 - Pads and strings: "80s synth pad", "Ensemble strings", "Shoegaze wash".
 - A synth with heavy unison already has width: use "Subtle widen" or skip the chorus.
 - "Vibrato" has `mix` 1: a pure pitch wobble, no dry sound. Keep it off drums and the kick.
@@ -29,7 +29,7 @@ description: The chorus, flanger and phaser mixer effects: parameters, presets b
 ## Phaser
 
 - Params: `stages` 2–12, `rate`, `depth`, `center` Hz, `feedback`, `stereo`, `mix`.
-- Presets: Phase 90 style, Slow 4-stage, 12-stage swirl, Funk, Ambient, Hollow.
+- Presets: Classic 4-stage, Slow 4-stage, 12-stage swirl, Funk, Ambient, Hollow.
 - Use on guitar, Rhodes, clav (Funk) and pads (Ambient). Stages / 2 is the number of notches. Full notches sit near `mix` 0.5.
 
 ## All three

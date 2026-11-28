@@ -94,7 +94,7 @@ Role guides: role-mid-bass, role-lead, role-pluck-arp, role-stab-chords, role-vo
 ## Engine limits for this genre
 
 - No vocals: the low and high hook voices are synth leads or a Vowel pad (role-vocal-substitute). Leave room for a vocal if the user may add one (File > Import audio).
-- Chorus on strings and leads: "Ensemble strings" or Juno I; a phaser on the guitar or keys (tool-modulation-fx).
+- Chorus on strings and leads: "Ensemble strings" or BBD I; a phaser on the guitar or keys (tool-modulation-fx).
 - No LinnDrum or early Roland samples: the 909 kit with a gated snare is the nearest.
 
 The tempo, harmony and palette rows are estimates from typical records of the style, not measured from sources.

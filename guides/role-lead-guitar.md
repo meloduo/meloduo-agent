@@ -5,7 +5,7 @@ description: Lead or melody guitar and clean picked parts: lead tone, octave mel
 
 # Lead guitar
 
-Lead guitar: Lead with more `gain` than the rhythm, even more mids, a 1/4 or 1/8D echo on a send. For a lead amp use Lead US or a Screamer drive before the amp (tool-guitar-rig).
+Lead guitar: Lead with more `gain` than the rhythm, even more mids, a 1/4 or 1/8D echo on a send. For a lead amp use Lead US or drive in Overdrive mode before the amp (tool-guitar-rig).
 
 ## Meloduo recipe
 
@@ -13,7 +13,7 @@ Lead guitar: Lead with more `gain` than the rhythm, even more mids, a 1/4 or 1/8
 - Fingerstyle and bossa: `pluck` Finger or Thumb, `noise` 0.1–0.2 for live fret noise.
 - 12-string sound: raise `course` (detune between the strings of a course).
 - `position` (0–12) picks the fret area; an octave melody in pop-punk: the same line `copy_notes` +12 on a second guitar channel.
-- Space: a 1/4 or 1/8D echo on a send rather than a long hall; a chorus (Post-punk clean guitar, Juno I) or a phaser on a clean lead, flanger for a solo sweep (tool-modulation-fx).
+- Space: a 1/4 or 1/8D echo on a send rather than a long hall; a chorus (Post-punk clean guitar, BBD I) or a phaser on a clean lead, flanger for a solo sweep (tool-modulation-fx).
 
 ## Related
 

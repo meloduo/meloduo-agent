@@ -5,7 +5,7 @@ description: What Meloduo cannot do and the honest substitutes: vocals, audio im
 
 # Engine limits and substitutes
 
-Available: eq, comp, duck, limit, sat (Soft, Tube, Hard), gate, drive (Boost, Screamer, Dist, Fuzz) and amp for guitar (tool-guitar-rig), width, reverb, delay, chorus, flanger, phaser (tool-modulation-fx), the user's web plugins.
+Available: eq, comp, duck, limit, sat (Soft, Tube, Hard), gate, drive (Boost, Overdrive, Dist, Fuzz) and amp for guitar (tool-guitar-rig), width, reverb, delay, chorus, flanger, phaser (tool-modulation-fx), the user's web plugins.
 
 Not in Meloduo: bitcrusher, tape. An LFO filter and tremolo exist only inside the synth (lfo → cutoff, lfo → amp); a guitar, sampler or drum channel has no LFO. Substitutes:
 - trance gate: lfo2 → amp in the synth;
