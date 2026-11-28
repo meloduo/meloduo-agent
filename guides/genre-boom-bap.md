@@ -92,7 +92,7 @@ Genre numbers are orientation; the reference wins. Swing values: craft-groove-sw
 ## Engine limits for this genre
 
 - The agent cannot sample a record: the user imports audio, or the loop is played on keys.
-- No time stretch: set the project tempo to the sample's tempo.
+- A sample at another tempo: warp it, `resample` for the classic pitched-down sound (tool-sampler).
 - No vinyl or tape plugin: Texture Vinyl air, sat Tube, a High cut (craft-engine-limits).
 - No scratches; leave the hook to drums and a variation of the loop.
 

@@ -82,7 +82,7 @@ Role guides: role-sub-bass (a mono sine sub), role-mid-bass (reese and neuro rec
 
 ## Engine limits for this genre
 
-- There is no break sample library and no time stretch. Build the break from the DnB kit, or chop the user's own imported break with the sampler at the project tempo (tool-sampler).
+- There is no break sample library and no slicer; an imported break can be warped to the tempo (tool-sampler). Build the break from the DnB kit, or chop the user's own imported break with the sampler at the project tempo (tool-sampler).
 - No multiband or OTT: use a parallel crush bus for neuro grit (tool-saturation-amp-width).
 
 ## Related

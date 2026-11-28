@@ -14,7 +14,7 @@ The project holds a track, and the user wants it in another genre, tempo or mood
 - **Ask what to keep.** Before you change anything, ask the user which parts matter: the hook, a chord, the bass line, a sound, a vocal clip. Without an answer, keep the hook and one key chord and change the rest.
 - **Keep the hook recognisable.** Keep its rhythm and its first 3–5 notes; the rest may change. A hook that keeps its rhythm survives a new key, a new sound and new chords.
 - **New groove first.** A remix lives in its drums and bass. Build the new beat from the target genre guide, then fit the old parts onto it.
-- **Tempo change.** Notes are stored in steps, so they follow the new tempo. Audio clips do not stretch: at a new tempo they drift against the grid and change length. Keep audio only when the tempo stays, or use short one-shots on the sampler.
+- **Tempo change.** Notes are stored in steps, so they follow the new tempo. Audio clips without warp drift against the grid at a new tempo: warp them (`edit_clips` `warp` "stretch", `sourceBpm` = the old tempo).
 - **Reharmonize.** Put new chords under the old hook: the hook notes on strong beats should be chord tones or colour tones (7, 9) of the new chords. A minor hook over major chords, or the reverse, changes the mood at once.
 - **Change the register or rhythm feel.** Half time, double time, or the hook an octave down often gives the new genre faster than new notes.
 - **Keep the form short and clear.** Most remixes use the original's hook sections and drop the rest.
@@ -23,7 +23,7 @@ The project holds a track, and the user wants it in another genre, tempo or mood
 
 1. `get_project_state` with notation "degrees": find the hook pattern, the chords and the tempo. Write down what you keep.
 2. `set_project_info` with the new genre and a note of what you keep from the original.
-3. `set_tempo` to the target genre tempo (genre guides). Check every audio clip and tell the user it will not stretch.
+3. `set_tempo` to the target genre tempo (genre guides). Warp every audio clip that must stay in time (tool-sampler) and tell the user which ones you stretched.
 4. `clone_pattern` the hook and chord patterns: the original stays untouched, and the user can compare.
 5. `copy_notes` the hook to a new channel with a new preset: `fromPatternId`, `channelId`, `toChannelId`, `semitones` to move key or octave (±12 for an octave, or the interval to the new key).
 6. `transpose_notes` for a whole pattern in a new key; `set_scale` so the piano roll and the warnings follow (with `patternIds` when only some patterns change key).
@@ -50,7 +50,7 @@ Make 2–3 versions that differ by one decision: the new chords, the tempo feel 
 
 ## Engine limits
 
-No time stretch: audio stays at its own speed under any tempo. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
+No slicer and no beat detection. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
 
 ## Related
 

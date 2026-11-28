@@ -18,7 +18,7 @@ Vocals later: a 2–3 dB cut at 1–4 kHz on chords and pads.
 ## Meloduo recipe
 
 1. Ask in the brief: "Is there a vocal or a vocal sample? Import it with File > Import audio and I will place it."
-2. With a vocal: set the tempo to the file's tempo (no time stretch), `place_audio`, then chops if wanted (tool-sampler).
+2. With a vocal: `place_audio` (with `warp` and `sourceBpm` when the song tempo differs from the take), then chops if wanted (tool-sampler).
 3. Without a vocal and with consent for an instrumental topline: a singable lead, `mode` Legato, glide 30–100 ms, a light vibrato (an LFO → pitch at 5–6 Hz with a delayed start) (role-lead).
 
 ## Related

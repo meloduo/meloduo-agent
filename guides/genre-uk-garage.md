@@ -80,7 +80,7 @@ Kit: House or 909, or Acoustic for a softer top. Speed garage keeps a four-on-th
 
 ## Engine limits
 
-No time stretch or vocal processing: the user imports vocals, and you chop them with the sampler (`start`, `end`). Details: `craft-engine-limits`.
+No vocal processing: the user imports vocals, and you chop them with the sampler (`start`, `end`) or warp them to the tempo. Details: `craft-engine-limits`.
 
 ## Related
 

@@ -10,7 +10,7 @@ description: Stage 1 of a track: read the project, ask at most four brief questi
 3. If the user left the decisions to you, do not ask again.
 4. If nobody can be asked (a sub-agent, an unattended run), or the request already fixes genre, length and mood, do not ask. Take your first ready answer for each open question: Inspiration, a hook carrier that fits the genre, no vocals, the length the request names. State these defaults in the track card (`set_project_info`) and in the report, so the user can change them.
 
-Ask whether the user has a vocal, a loop or a one-shot: they can import it (File > Import audio) and you can place and cut it (tool-sampler). Without a time stretch, the project tempo follows the file.
+Ask whether the user has a vocal, a loop or a one-shot: they can import it (File > Import audio) and you can place and cut it (tool-sampler). A long stretch sounds coarse, so prefer a project tempo near the file.
 
 If the user names an artist or a track, build its core first: craft-artist-core. In Inspiration, say once that the track is inspired by the reference and will not match it one to one; one sentence, no list of reasons.
 
