@@ -24,11 +24,12 @@ description: Use the user's imported audio: sampler channels, slices by start an
 ## Recipes
 
 1. **The user's vocal in time:** `place_audio` with `bar` and `offset` so the first word lands on the downbeat; leave room around it in the arrangement (role-vocal-substitute).
-2. **Vocal chops:** `add_channel` sampler, `set_sampler` `start`/`end` around one syllable, `mode` Gate, `release` 30–80 ms; notes in eighths in a build. A note other than `root` changes pitch and speed together, like a classic sampler.
-3. **A loop (boom bap, lo-fi):** `place_audio` with `warp` "stretch" (or `resample` for the pitched-down lo-fi sound); or on the sampler `start`/`end` on 1–2 bars, `loop` On, `stretch`, `bpm`. Producers usually take the low end and some top out of a sample: eq Low cut about 150 Hz, High cut 8–10 kHz, `duck` from the kick.
-4. **A reference track for comparison:** on its own sampler channel, `muted`, one section long (tool-match-eq).
-5. **A wavetable from a sample:** tool-wavetable.
-6. **Reverse cymbal into a drop:** `place_audio` with `reverse`, at `bar` = drop − file `seconds` / (stepsPerBar × 15 / bpm), so it ends on the drop.
+2. **Slicing a break or a vocal:** `slice_sample` `by` "transients" (raise `sensitivity` for soft hits) or "beats", with `toPattern` true. Root plays slice 1, each next pitch the next one; the rows give `beat` (how far from the grid), `peakDb` and `bright` (low and loud reads as a kick, bright as a hat or snare). Reorder, repeat and mute slices by editing those notes. For a seamless loop at another tempo set the sampler `stretch` "Stretch" and the file's `bpm` with `set_sampler` before `toPattern`: the notes are placed by that tempo. If you set it afterwards, use the reply's `fileBpm`.
+3. **Vocal chops by hand:** `add_channel` sampler, `set_sampler` `start`/`end` around one syllable, `mode` Gate, `release` 30–80 ms; notes in eighths in a build. A note other than `root` changes pitch and speed together, like a classic sampler.
+4. **A loop (boom bap, lo-fi):** `place_audio` with `warp` "stretch" (or `resample` for the pitched-down lo-fi sound); or on the sampler `start`/`end` on 1–2 bars, `loop` On, `stretch`, `bpm`. Producers usually take the low end and some top out of a sample: eq Low cut about 150 Hz, High cut 8–10 kHz, `duck` from the kick.
+5. **A reference track for comparison:** on its own sampler channel, `muted`, one section long (tool-match-eq).
+6. **A wavetable from a sample:** tool-wavetable.
+7. **Reverse cymbal into a drop:** `place_audio` with `reverse`, at `bar` = drop − file `seconds` / (stepsPerBar × 15 / bpm), so it ends on the drop.
 
 ## Related
 

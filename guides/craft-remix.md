@@ -50,7 +50,7 @@ Make 2–3 versions that differ by one decision: the new chords, the tempo feel 
 
 ## Engine limits
 
-No slicer and no beat detection. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
+No beat detection. No vocal: a sung hook needs the user's own recording. Details: craft-engine-limits.
 
 ## Related
 
