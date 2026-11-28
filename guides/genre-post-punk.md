@@ -17,7 +17,7 @@ Use it for post-punk, coldwave, darkwave and the revival (Joy Division, The Cure
 2. A bass guitar with a pick, straight 8ths, loud, carries the hook. Or a mono synth bass in 8ths or 16ths.
 3. One thin clean guitar riff with chorus. One simple synth line or a cold pad, not both thick.
 4. A dry, narrow, dark, cheap mix. Reverb on the snare, the guitar and the vocal slot, not on everything.
-5. A minor key, 3–4 chords, the same loop for the whole song; sections differ by which parts play.
+5. A minor key, 3–4 chords, the same loop for the whole song; sections differ by which parts play. `render_preview` does not report "Flat sections" when two or more parts enter or leave between sections; if it still fires, the parts do not change: thin out a section or add a layer in one.
 
 ## Tempo
 

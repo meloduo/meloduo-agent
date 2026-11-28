@@ -38,7 +38,7 @@ Kick-led, hypnotic club music: peak-time, raw or deep techno, dub techno, and th
 ## Form
 
 - DJ form: Intro, Breakdown, Drop, Drop variation, Breakdown, Drop, Outro (the Club form in stage-form).
-- Sections of 16–32 bars, 8 at least; DJs count in 8-bar phrases.
+- Sections of 16–32 bars, 8 at least; DJs count in 8-bar phrases. One loop runs through the track, so loudness stays near-level: the contrast is layers entering and leaving. `render_preview` does not report "Flat sections" when two or more parts enter or leave between sections; if it still fires, the parts do not change: thin out a section or add a layer in one.
 - An impact every 16 bars, a sweep every 8 (craft-transitions).
 - The outro is not a copy of the intro: change a part or a filter.
 

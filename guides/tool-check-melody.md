@@ -25,7 +25,7 @@ description: Check a melody against its harmony with check_melody and read the r
 
 Over power chords (root and fifth only) the tool already counts the implied diatonic triad (the third of the key) as chord tones. Only notes outside the key, or a scale with other than 7 notes, still warn: treat those warnings as real.
 
-A riff or arp may play without rests: say so in `why` when `check_melody` warns.
+With no chord pattern the harmony is the other tonal lines, and a channel that doubles the checked line does not count. If only single-note lines sound under it, the result says so: its chord-tone share is a rough guide, so pass `against` with a chord pattern. A riff or arp may play without rests: say so in `why` when `check_melody` warns.
 
 ## Related
 

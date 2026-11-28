@@ -40,7 +40,7 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 - `cab` 0 Off, 1–4 filter cabs (1x12, 2x12, 4x12, 8x10 for bass), 5–9 IR cabs: 1x12 Open US, 2x12 Blue UK, 2x12 Jazz, 4x12 Vintage, 4x12 Modern.
 - `mic` (Dynamic, Ribbon, Condenser) and `micPos` (0…1) act on cabs 5–9 in every model.
 - Automatable: numbers only. `model`, `cab`, `mic`, `micPos` are not.
-- Amp presets. Old, unchanged: Clean, Funk clean, Crunch, Lead, Chug, Bass grit, Lo-fi box. Genre: Glass clean, Jangle, Edge, Blues edge, Chime edge, Funk glass, Stack crunch, Punk, Grunge, Modern metal.
+- Amp presets. Old, unchanged: Clean, Funk clean, Crunch, Lead, Chug, Bass grit, Lo-fi box. Genre: Glass clean, Jangle, Edge, Blues edge, Chime edge, Funk glass, Stack crunch, Punk, Grunge, Modern metal, Bass clean 8x10 (the amp of the Post-punk bass rig).
 - High gain: gate first, then a Screamer (low `drive`, `level` up) before the amp, then Modern metal or Lead US. Keep `gain` below 34 on Classic (aliasing).
 
 ## Rigs
@@ -62,9 +62,9 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 | Metal | gate Tight, drive Tighten, amp Modern metal |
 | Ambient | comp Smooth lead, amp Glass clean, chorus Subtle widen, delay Dub, reverb Hall / Big pad |
 
-Every rig sets an amp `out` that levels the whole rig (about +2…+12 dB): it is level makeup after the drive. If `render_preview` warns about the chain peak, keep the amp `out`: the warning reads the peak at the chain end, before the fader, so the fader and `set_guitar` `gain` do not clear it. If the mix peak is fine, accept it (`skipWarnings` chainPeak); if the mix clips, end the chain with `add_effect` `limit`. If a `hint` lists `add_effect` calls, keep their params. A through-zero flanger delays the dry sound 5 ms; the mix compensates it.
+Every rig sets an amp `out` that levels the whole rig (about +2…+12 dB): it is level makeup after the drive. `render_preview` warns about the peak of a chain with an amp only when the channel peak after the fader or the mix peak is at −1 dB or above, so a rig with a fine mix gets no `chainPeak` warning. If it does warn, keep the amp `out`: lower the channel fader (`set_channel` `volumeDb`), or end the chain with `add_effect` `limit`. If a `hint` lists `add_effect` calls, keep their params. A through-zero flanger delays the dry sound 5 ms; the mix compensates it.
 
-A rig is a start: render, then adjust `gain`, `mid` and the cab by the stem.
+A guitar preset that is not a rig sets only the voice (no amp, chain or reverb send): `Jangle 12` is one, and the result carries a `hint` that names the rig Cure jangle for its chain. A rig is a start: render, then adjust `gain`, `mid` and the cab by the stem.
 
 ## Related
 
