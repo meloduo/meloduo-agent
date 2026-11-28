@@ -17,7 +17,7 @@ description: Patterns and playlist clips: one part per pattern, split, clone, sw
 1. **A bigger second chorus:** `clone_pattern` the hats or chords (the copy keeps the notes, not the clips), edit the copy, then `edit_clips` `{id, patternId}` only on the clips of the second chorus. The cheapest way to make a repeat differ.
 2. **A tag or stop bar:** a clone with `set_pattern_length` 1–2, placed with `place_pattern` at the boundary.
 3. **Play from the middle:** `fromBar` on a clip plays a long pattern from that bar, for example the second half of a long snare roll for a short build.
-4. `edit_clips` also moves (`bar`), resizes (`bars`), mutes (`muted`) and removes clips (`remove`); on audio clips it sets `offset`, `gainDb` and `channelId` (tool-sampler). A muted clip stays visible but is silent in render and export: mute to compare a version with and without a part, remove once you decide.
+4. `edit_clips` also moves (`bar`), resizes (`bars`), mutes (`muted`) and removes clips (`remove`); on audio clips it sets `offset`, `gainDb`, fades, `crossfade`, `reverse` and `channelId` (tool-sampler). A muted clip stays visible but is silent in render and export: mute to compare a version with and without a part, remove once you decide.
 5. **Cut a clip:** `edit_clips` `split` `[{id, bar}]` at a song bar inside it; the right half goes on in the pattern or file and gets a new id (reply `split`). Cut a phrase's last bar off, then swap or mute only that bar.
 6. **Markers:** `add_markers` in one call before placing clips, every section boundary. `color` 1–6 (1 blue, 2 yellow, 3 orange, 4 green, 5 purple, 6 teal): verses one colour, choruses another. `loudnessBySection` in `render_preview` uses the markers.
 
