@@ -2,7 +2,7 @@
 
 Changes of the `@meloduo/mcp` bridge, the guides and the skills. The tool list comes from the open Meloduo tab, so new studio features need no bridge update; their guides do.
 
-## Unreleased
+## 0.3.1 (2026-11-28)
 
 - Guides and server instructions for time signatures, the tempo map, the key of a pattern, audio warp and the sample slicer.
 - Guides for audio clip fades, crossfades and reverse, batch calls, note slides, loudness matching and microphone recording by the user.
