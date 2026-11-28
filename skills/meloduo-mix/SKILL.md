@@ -5,7 +5,7 @@ description: Fix a mix or master in Meloduo through its MCP tools - muddy, harsh
 
 # Mix and master in Meloduo
 
-You cannot hear the mix. Read it from `render_preview`: loudness, peaks, band shares, stems, `dynamics`, `space`, `stereo` and the warnings. Numbers are guidelines; a deliberate genre choice beats them (name it in `why`, silence its warning with `skipWarnings`).
+You cannot hear the mix. Read it from `render_preview`: loudness, peaks, band shares, stems, `dynamics`, `space`, `stereo` and the warnings (result fields, no options). Numbers are guidelines; a deliberate genre choice beats them (name it in `why`, silence its warning with `skipWarnings`).
 
 **Always**: `why` on every edit, keep the user's edits, clear the solo and mute you set, `clipped` 0, true peak ≤ −1 dBTP on the final master.
 

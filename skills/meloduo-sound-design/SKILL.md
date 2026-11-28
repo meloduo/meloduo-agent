@@ -48,6 +48,6 @@ Which sounds to make this way:
 
 1. Can you say how the main sound differs from the preset, and why?
 2. Are the role signs from the role guide visible in the stem?
-3. Is the bass or 808 audible on a phone: is there energy above 100 Hz?
+3. Is the bass or 808 audible on a phone: is there energy above 100 Hz? A bass guitar stem under 30% in 60–250 Hz at its register means a wrong pickup or a pedal that cuts lows.
 4. Do the guitars and doubles differ in timbre as well as panning?
 5. Are the transitions in the track different, and do they fit the genre?

@@ -14,7 +14,7 @@ description: The guitar instrument: presets, parts and how to write them, chords
 | Bossa, jazz | Nylon bossa, Clean neck | bass on the beats, a 3–4 note chord on the syncopations |
 | Funk | Clean funk | a chord on every sixteenth, velocity 110 / 50 / 70 / 50, length 1 step |
 | Rock rhythm, chug | Crunch rhythm, Palm-mute chug | 2–3 note power chords (40 47 52); `add_channel` sets the amp itself; a rig preset (Punk, Grunge, Metal...) adds the whole chain |
-| Bass | Finger bass, Pick bass, Muted bass | one note at a time, 28–55, root on strong beats |
+| Bass | Finger bass, Pick bass, Muted bass, Post-punk bass | one note at a time, 28–55 (Post-punk bass 40–57), root on strong beats |
 | Banjo, mandolin | Bluegrass banjo, Mandolin | a roll in eighths; mandolin tremolo in sixteenths |
 
 - A guitar chord is notes on one step: the voice spreads them over the strings itself.

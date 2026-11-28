@@ -30,7 +30,7 @@ type Fake = { bpm: number };
 let seenClient: unknown;
 const seenCalls: { tool: string; sid: string; client: { name: string } }[] = [];
 
-async function openTab(state: Fake, project: { id: string; name: string }, onClient = (c: unknown) => void (seenClient = c), log = true) {
+async function openTab(state: Fake, project: { id: string; name: string }, onClient = (c: unknown) => void (seenClient = c), log = true, tools: object[] = TOOLS) {
   const ws = await new Promise<WebSocket>((resolve, reject) => {
     const try_ = (n: number) => {
       const s = new WebSocket(`ws://127.0.0.1:${PORT}`);
@@ -39,7 +39,7 @@ async function openTab(state: Fake, project: { id: string; name: string }, onCli
     };
     try_(50);
   });
-  ws.send(JSON.stringify({ type: 'tools', tools: TOOLS }));
+  ws.send(JSON.stringify({ type: 'tools', tools }));
   ws.send(JSON.stringify({ type: 'tab', project, readOnly: false }));
   ws.on('message', (raw) => {
     const msg = JSON.parse(raw.toString());
@@ -68,6 +68,9 @@ assert.ok(index.guides.length > 50 && index.guides.some((g: { id: string }) => g
 const two = await json(client, 'get_guide', { topics: ['role-808', 'gated reverb', 'nosuchguide'] });
 assert.deepEqual(two.guides.map((g: { id: string }) => g.id), ['role-808', 'tool-reverb'], 'ids and aliases resolve');
 assert.equal(two.missing[0].id, 'nosuchguide');
+const fin = await json(client, 'get_guide', { topics: ['finish', 'stage 10', 'master'] });
+assert.deepEqual(fin.guides.map((g: { id: string }) => g.id), ['stage-master', 'stage-master', 'stage-master'], 'finish, stage 10 and master reach stage-master');
+assert.match(index.stages, /stage-master/, 'the index names the stage order');
 const check = await json(client, 'get_guide', { topics: ['tool-reverb'], section: 'Recipes' });
 assert.match(check.guides[0].text, /^## Recipes/);
 assert.equal((await client.callTool({ name: 'get_guide', arguments: { topics: ['a', 'b', 'c', 'd', 'e'] } })).isError, true);
@@ -122,6 +125,14 @@ quit.send(JSON.stringify({ type: 'quit' }));
 await new Promise((r) => setTimeout(r, 300));
 const third = await connectClient('smoke3');
 assert.deepEqual(await names(third), ['get_guide', 'get_project_state', 'list_tabs', 'set_tempo', 'use_tab'], 'a new bridge with no tab yet serves the cached list');
+// A session that started from the cache sees a newer tab's list at once (the cache can be older than the app build).
+let thirdChanged = 0;
+third.setNotificationHandler(ToolListChangedNotificationSchema, async () => void thirdChanged++);
+const newer = await openTab({ bpm: 1 }, { id: 'pn', name: 'Newer build' }, () => {}, false, [...TOOLS, { name: 'add_effect', description: 'Add a plugin.', inputSchema: { type: 'object', properties: { type: { enum: ['eq', 'chorus'] } } } }]);
+await until(() => thirdChanged > 0);
+assert.ok(thirdChanged > 0, 'a newer tab list: list_changed reaches a session that started from the cache');
+assert.ok((await names(third)).includes('add_effect'), 'the session lists the newer tool');
+newer.close();
 await third.close();
 ws = await openTab(a, { id: 'pa', name: 'Song A' });
 const tabB2 = await openTab(b, { id: 'pb', name: 'Song B' }, (c) => void (seenB = c));

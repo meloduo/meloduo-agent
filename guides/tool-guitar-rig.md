@@ -45,10 +45,11 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 
 ## Rigs
 
-`add_channel` guitar with a rig `preset` adds the voice and its chain (`effectIds`, `chain`). The reverb goes to an existing reverb bus as a send. `set_guitar` with a rig adds the chain only to a channel with no plugins (`chainAdded`); otherwise a `hint` lists the missing items.
+`add_channel` guitar with a rig `preset` adds the voice and its chain (`effectIds`, `chain`). The reverb goes to the reverb bus as a send; with no reverb bus the tool makes one (`busCreated`), never a reverb plugin on the channel. `params` in the result lists the amp `gain` and `out` and the rig's other levels by effectId. `set_guitar` with a rig adds the chain only to a channel with no plugins (`chainAdded`); otherwise a `hint` lists the missing items.
 
 | Rig | Chain (preset names) |
 |---|---|
+| Post-punk bass | voice Post-punk bass, comp Bass leveler, amp Clean US (cab 8x10), chorus Post-punk bass; no drive, delay or reverb |
 | Post-punk chorus | comp Smooth lead, amp Glass clean, chorus Post-punk clean guitar, delay Guitar eighth, reverb Plate / Vocal plate |
 | Cure jangle | comp Smooth lead, amp Jangle, flanger Subtle comb, delay Quarter echo, reverb Classic / Hall |
 | Shoegaze wall | drive Wall fuzz, amp Edge, chorus Shoegaze wash, delay Quarter echo, reverb Classic / Cathedral |
@@ -61,7 +62,7 @@ description: The guitar chain: gate, drive, amp models and cabinets, genre amp p
 | Metal | gate Tight, drive Tighten, amp Modern metal |
 | Ambient | comp Smooth lead, amp Glass clean, chorus Subtle widen, delay Dub, reverb Hall / Big pad |
 
-Every rig sets an amp `out` that levels the whole rig. If a `hint` lists `add_effect` calls, keep their params. A through-zero flanger delays the dry sound 5 ms; the mix compensates it.
+Every rig sets an amp `out` that levels the whole rig (about +2…+12 dB): it is level makeup after the drive. If `render_preview` warns about the chain peak, keep the amp `out`: the warning reads the peak at the chain end, before the fader, so the fader and `set_guitar` `gain` do not clear it. If the mix peak is fine, accept it (`skipWarnings` chainPeak); if the mix clips, end the chain with `add_effect` `limit`. If a `hint` lists `add_effect` calls, keep their params. A through-zero flanger delays the dry sound 5 ms; the mix compensates it.
 
 A rig is a start: render, then adjust `gain`, `mid` and the cab by the stem.
 

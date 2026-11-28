@@ -5,7 +5,7 @@ description: Drum channels and kits: kits, Acoustic and Electronic engines, deep
 
 # Drums
 
-- `add_kit`: 808, 909, House, Techno, Trap, Hardstyle, Hardcore, DnB, Acoustic Rock, Acoustic Jazz, Latin. It replaces the untouched starter Kick, Snare and Hat. Live genres use Acoustic, electronic genres a genre kit.
+- `add_kit`: 808, 909, House, Techno, Trap, Hardstyle, Hardcore, DnB, Acoustic Rock, Acoustic Jazz, Latin, Drum machine 80s (vintage PCM machine: post-punk, darkwave; reverb Ambience / Gated on the snare). It replaces the untouched starter Kick, Snare and Hat. Live genres use Acoustic, electronic genres a genre kit.
 - After the kit, change two voices: kick `decay`, a snare from another folder, add conga, shaker, clave or cowbell. Then two house tracks do not share one kit.
 - `get_drum` with no arguments lists kits and sounds; with a voice it gives parameters and presets. A preset is `Folder / Name` (`Rock / Dry Punch`).
 - Kick, tom, snare and rim come as Acoustic (`engine` 0; the snare has folders Rock, Metal, Jazz, Funk, Pop, Vintage, Piccolo and knobs wires, tension, rimshot) and Electronic (`engine` 1, folders Classic, House, Techno, Trap, Hardstyle, Hardcore, DnB).

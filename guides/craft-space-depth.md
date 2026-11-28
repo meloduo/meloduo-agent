@@ -35,7 +35,7 @@ By genre:
 - synthwave, ambient: a big hall on the snare, pads and lead;
 - house, EDM: a room on the drums, hall and echo on plucks and lead, the breakdown wetter than the drop.
 
-4. Depth: `space` in `render_preview`. The main atmosphere is usually at `wetLu` −23…−17, a ballad or ambient −16…−12. The `dry` field means no space is heard; trap and drill can stay dry.
+4. Depth: the `space` field of the `render_preview` result (always there, no option). The main atmosphere is usually at `wetLu` −23…−17, a ballad or ambient −16…−12. The `dry` field means no space is heard; trap and drill can stay dry.
 
 ## Related
 

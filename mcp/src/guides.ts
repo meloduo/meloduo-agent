@@ -18,7 +18,7 @@ const MAX_BYTES = 24_000;
 export const ALIASES: Record<string, string> = {
   'gated-reverb': 'tool-reverb', 'gated-snare': 'role-snare-clap', sidechain: 'tool-sidechain-duck', ducking: 'tool-sidechain-duck',
   pumping: 'tool-sidechain-duck', swing: 'craft-groove-swing', groove: 'craft-groove-swing', humanize: 'tool-note-editing',
-  lufs: 'craft-loudness-lufs', loudness: 'craft-loudness-lufs', mastering: 'tool-master-loudness', master: 'stage-master',
+  lufs: 'craft-loudness-lufs', loudness: 'craft-loudness-lufs', mastering: 'tool-master-loudness', master: 'stage-master', 'stage-10': 'stage-master', stage10: 'stage-master', finish: 'stage-master', finishing: 'stage-master', delivery: 'stage-master', 'master-chain': 'stage-master', 'true-peak': 'stage-master',
   vocals: 'role-vocal-substitute', vocal: 'role-vocal-substitute', sample: 'tool-sampler', samples: 'tool-sampler',
   notation: 'tool-notation-lines', euclid: 'tool-notation-lines', triplets: 'tool-notation-lines', limits: 'craft-engine-limits',
   gate: 'tool-guitar-rig', drive: 'tool-guitar-rig', amp: 'tool-guitar-rig', rig: 'tool-guitar-rig', chorus: 'tool-modulation-fx', flanger: 'tool-modulation-fx', phaser: 'tool-modulation-fx', 'post-punk': 'genre-post-punk', darkwave: 'genre-post-punk', coldwave: 'genre-post-punk', mud: 'craft-frequency-slots', 'kick-and-bass': 'craft-kick-bass', wet: 'craft-space-depth',
@@ -65,7 +65,7 @@ export function getGuide(args: unknown): { result?: unknown; error?: string } {
   const all = load();
   if (!all.size) return { error: 'The guides folder is missing from this bridge install. Read the guides at https://github.com/meloduo/meloduo-agent/tree/main/guides instead.' };
   if (a.topics === undefined || (Array.isArray(a.topics) && !a.topics.length))
-    return { result: { libraryVersion: VERSION, guides: [...all.values()].map((g) => ({ id: g.id, axis: g.axis, description: g.description, bytes: bytes(g.text) })) } };
+    return { result: { libraryVersion: VERSION, stages: 'A whole track goes stage-brief, stage-track-card, stage-groove-harmony, stage-hook, stage-full-drop, stage-form, stage-variations-transitions, stage-fx-movement, stage-balance, stage-master (stage 10, the last: master chain, loudness, delivery).', guides: [...all.values()].map((g) => ({ id: g.id, axis: g.axis, description: g.description, bytes: bytes(g.text) })) } };
   if (!Array.isArray(a.topics) || !a.topics.every((t) => typeof t === 'string')) return { error: 'topics must be a list of guide ids. Call get_guide with no arguments for the index.' };
   if (a.topics.length > MAX_TOPICS) return { error: `At most ${MAX_TOPICS} topics per call. Split the call.` };
   if (a.section !== undefined && typeof a.section !== 'string') return { error: 'section must be a heading text, for example "Check".' };
