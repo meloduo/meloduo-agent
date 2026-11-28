@@ -57,6 +57,7 @@ In `mcp/`: `pnpm install`, then point your client at the source with `{ "command
 
 - `pnpm smoke` checks the bridge end to end with a fake tab, on port 8788. `MELODUO_SMOKE_ENTRY=<path>/dist/index.js pnpm smoke` checks a built package.
 - `pnpm build` writes `dist/`; `npm publish` runs the type check and the build first.
+- After `npm publish`, run the "Publish to MCP Registry" workflow on GitHub. It takes the version from `mcp/package.json`.
 
 ## How it works
 
