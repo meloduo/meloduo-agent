@@ -26,7 +26,7 @@ The project holds a track, and the user wants it in another genre, tempo or mood
 3. `set_tempo` to the target genre tempo (genre guides). Check every audio clip and tell the user it will not stretch.
 4. `clone_pattern` the hook and chord patterns: the original stays untouched, and the user can compare.
 5. `copy_notes` the hook to a new channel with a new preset: `fromPatternId`, `channelId`, `toChannelId`, `semitones` to move key or octave (±12 for an octave, or the interval to the new key).
-6. `transpose_notes` for a whole pattern in a new key; `set_scale` so the piano roll and the warnings follow.
+6. `transpose_notes` for a whole pattern in a new key; `set_scale` so the piano roll and the warnings follow (with `patternIds` when only some patterns change key).
 7. Write the new chords with `add_notes` (letter chords in a `line`), then `check_melody` on the hook `against` the new chord pattern.
 8. New drums and bass from the genre guide, `set_channel` `swing` for the new groove.
 9. Place the sections with `place_patterns` and markers (`add_markers`).

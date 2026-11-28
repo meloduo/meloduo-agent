@@ -30,6 +30,7 @@ The gap before a big change is 1, 2 or 4 bars at large boundaries and one beat a
 The harmonic arc "bridge → build → chorus":
 - the whole arc stays in one key; the bridge may change mode or harmony, but the build already prepares the chorus;
 - the last chord of the build leads into the first chord of the chorus: the dominant (V), IV or the chord a tone below;
+- after the notes are transposed, give the patterns of that section their key (`set_scale` with `patternIds`), so degrees and warnings read them right;
 - modulate at a clear boundary: entering the bridge, where the texture changes completely, or right on the final chorus after a stop bar (a lift by a semitone or a tone). A key change in the middle of a rise sounds like a mistake;
 - after a modulation every part is in the new key: bass, chords, hook, arp, 808. Check every melodic part of the new section with `check_melody`.
 
